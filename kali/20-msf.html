@@ -1,0 +1,1470 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>20-Metasploit · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="21-msf主机扫描.html" />
+    
+    
+    <link rel="prev" href="10-cobaltstike.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    过江龙
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../payload/">
+            
+                <a href="../payload/">
+            
+                    
+                    漏洞库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../payload/application/">
+            
+                <a href="../payload/application/">
+            
+                    
+                    中间件漏洞
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1.1" data-path="../payload/application/apache/apache_shiro.html">
+            
+                <a href="../payload/application/apache/apache_shiro.html">
+            
+                    
+                    apache
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1.1.1" data-path="../payload/application/apache/apache_shiro.html">
+            
+                <a href="../payload/application/apache/apache_shiro.html">
+            
+                    
+                    apache shiro
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.2" data-path="../payload/application/weblogic/CVE-2020-2555.html">
+            
+                <a href="../payload/application/weblogic/CVE-2020-2555.html">
+            
+                    
+                    weblogic
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1.2.1" data-path="../payload/application/weblogic/CVE-2020-2555.html">
+            
+                <a href="../payload/application/weblogic/CVE-2020-2555.html">
+            
+                    
+                    CVE-2020-2551
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.3" data-path="../payload/application/elasticsearch/elasticsearch.html">
+            
+                <a href="../payload/application/elasticsearch/elasticsearch.html">
+            
+                    
+                    elasticsearch
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1.3.1" data-path="../payload/application/elasticsearch/elasticsearch.html">
+            
+                <a href="../payload/application/elasticsearch/elasticsearch.html">
+            
+                    
+                    elasticsearch
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.4" data-path="../payload/application/Zookeeper/ZookeePer未授权访问.html">
+            
+                <a href="../payload/application/Zookeeper/ZookeePer未授权访问.html">
+            
+                    
+                    Zookeeper
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1.4.1" data-path="../payload/application/Zookeeper/ZookeePer未授权访问.html">
+            
+                <a href="../payload/application/Zookeeper/ZookeePer未授权访问.html">
+            
+                    
+                    Zookeeper
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.5" data-path="../payload/application/fastjson/fastjson_1.2.24_反序列化漏洞.html">
+            
+                <a href="../payload/application/fastjson/fastjson_1.2.24_反序列化漏洞.html">
+            
+                    
+                    fastjson
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1.5.1" data-path="../payload/application/fastjson/fastjson_1.2.24_反序列化漏洞.html">
+            
+                <a href="../payload/application/fastjson/fastjson_1.2.24_反序列化漏洞.html">
+            
+                    
+                    fastjson_1.2.24
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.5.2" data-path="../payload/application/fastjson/fastjson_1.2.47_反序列化漏洞.html">
+            
+                <a href="../payload/application/fastjson/fastjson_1.2.47_反序列化漏洞.html">
+            
+                    
+                    fastjson_1.2.47
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.6" data-path="../payload/application/Spring/Spring_Boot相关漏洞.html">
+            
+                <a href="../payload/application/Spring/Spring_Boot相关漏洞.html">
+            
+                    
+                    Spring
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1.6.1" data-path="../payload/application/Spring/Spring_Boot相关漏洞.html">
+            
+                <a href="../payload/application/Spring/Spring_Boot相关漏洞.html">
+            
+                    
+                    Spring_Boot相关漏洞
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.7" data-path="../payload/application/zabbix/zabbix弱口令getshell.html">
+            
+                <a href="../payload/application/zabbix/zabbix弱口令getshell.html">
+            
+                    
+                    zabbix
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1.7.1" data-path="../payload/application/zabbix/zabbix弱口令getshell.html">
+            
+                <a href="../payload/application/zabbix/zabbix弱口令getshell.html">
+            
+                    
+                    zabbix弱口令getshell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.7.2" data-path="../payload/application/zabbix/zabbix_SQL注入漏洞CVE-2016-10134.html">
+            
+                <a href="../payload/application/zabbix/zabbix_SQL注入漏洞CVE-2016-10134.html">
+            
+                    
+                    zabbix_SQL注入漏洞(CVE-2016-10134)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.8" data-path="../payload/application/vcenter/vcenter任意文件读取.html">
+            
+                <a href="../payload/application/vcenter/vcenter任意文件读取.html">
+            
+                    
+                    vcenter
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1.8.1" data-path="../payload/application/vcenter/vcenter任意文件读取.html">
+            
+                <a href="../payload/application/vcenter/vcenter任意文件读取.html">
+            
+                    
+                    vcenter
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../payload/cms/">
+            
+                <a href="../payload/cms/">
+            
+                    
+                    cms
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../payload/cms/天融信/天融信数据放泄漏系统越权修改密码.html">
+            
+                <a href="../payload/cms/天融信/天融信数据放泄漏系统越权修改密码.html">
+            
+                    
+                    天融信
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1.1" data-path="../payload/cms/天融信/天融信数据放泄漏系统越权修改密码.html">
+            
+                <a href="../payload/cms/天融信/天融信数据放泄漏系统越权修改密码.html">
+            
+                    
+                    天融信数据放泄漏系统越权修改密码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.2" data-path="../payload/cms/天融信/天融信TopApp-LB 负载均衡.html">
+            
+                <a href="../payload/cms/天融信/天融信TopApp-LB 负载均衡.html">
+            
+                    
+                    天融信TopApp-LB 负载均衡sql注入
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../payload/cms/sangfor/终端检测响应平台代码执行.html">
+            
+                <a href="../payload/cms/sangfor/终端检测响应平台代码执行.html">
+            
+                    
+                    sangfor
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.2.1" data-path="../payload/cms/sangfor/终端检测响应平台代码执行.html">
+            
+                <a href="../payload/cms/sangfor/终端检测响应平台代码执行.html">
+            
+                    
+                    终端检测响应平台代码执行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../payload/cms/wordpress/wordpress_content_Injection.html">
+            
+                <a href="../payload/cms/wordpress/wordpress_content_Injection.html">
+            
+                    
+                    wordpress
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.3.1" data-path="../payload/cms/wordpress/wordpress_content_Injection.html">
+            
+                <a href="../payload/cms/wordpress/wordpress_content_Injection.html">
+            
+                    
+                    Wordpress 4.7.0/4.7.1 Content Injection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3.2" data-path="../payload/cms/wordpress/wordpress扫描工具.html">
+            
+                <a href="../payload/cms/wordpress/wordpress扫描工具.html">
+            
+                    
+                    wordpress扫描工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../payload/cms/通达OA/通达OA文件上传&文件包含.html">
+            
+                <a href="../payload/cms/通达OA/通达OA文件上传&文件包含.html">
+            
+                    
+                    通达OA
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.4.1" data-path="../payload/cms/通达OA/通达OA文件上传&文件包含.html">
+            
+                <a href="../payload/cms/通达OA/通达OA文件上传&文件包含.html">
+            
+                    
+                    通达OA文件上传&文件包含
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.2" data-path="../payload/cms/通达OA/通达OA任意用户登录.html">
+            
+                <a href="../payload/cms/通达OA/通达OA任意用户登录.html">
+            
+                    
+                    通达OA任意用户登录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3" data-path="../payload/cms/通达OA/通达OA前台RCE.html">
+            
+                <a href="../payload/cms/通达OA/通达OA前台RCE.html">
+            
+                    
+                    通达OA前台RCE
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../payload/cms/禅道/禅道9版本注入.html">
+            
+                <a href="../payload/cms/禅道/禅道9版本注入.html">
+            
+                    
+                    禅道
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.5.1" data-path="../payload/cms/禅道/禅道9版本注入.html">
+            
+                <a href="../payload/cms/禅道/禅道9版本注入.html">
+            
+                    
+                    禅道9版本注入
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="../payload/cms/siteserver/siteserver远程下载getshell.html">
+            
+                <a href="../payload/cms/siteserver/siteserver远程下载getshell.html">
+            
+                    
+                    siteserver
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.6.1" data-path="../payload/cms/siteserver/siteserver远程下载getshell.html">
+            
+                <a href="../payload/cms/siteserver/siteserver远程下载getshell.html">
+            
+                    
+                    siteserver远程下载getshell
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.7" data-path="../payload/cms/thinkphp/thinkphp5.x任意代码执行.html">
+            
+                <a href="../payload/cms/thinkphp/thinkphp5.x任意代码执行.html">
+            
+                    
+                    thinkphp
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.7.1" data-path="../payload/cms/thinkphp/thinkphp5.x任意代码执行.html">
+            
+                <a href="../payload/cms/thinkphp/thinkphp5.x任意代码执行.html">
+            
+                    
+                    thinkphp5.x任意代码执行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.8" data-path="../payload/cms/thinkcmf/thinkcmf代码执行.html">
+            
+                <a href="../payload/cms/thinkcmf/thinkcmf代码执行.html">
+            
+                    
+                    thinkcmf
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.8.1" data-path="../payload/cms/thinkcmf/thinkcmf代码执行.html">
+            
+                <a href="../payload/cms/thinkcmf/thinkcmf代码执行.html">
+            
+                    
+                    Tinkcmf 代码执行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.9" data-path="../payload/cms/用友/用友GRP-u8注入.html">
+            
+                <a href="../payload/cms/用友/用友GRP-u8注入.html">
+            
+                    
+                    用友
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.9.1" data-path="../payload/cms/用友/用友GRP-u8注入.html">
+            
+                <a href="../payload/cms/用友/用友GRP-u8注入.html">
+            
+                    
+                    用友
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.10" data-path="../payload/cms/Discuz/DZ小于3.4任意文件删除.html">
+            
+                <a href="../payload/cms/Discuz/DZ小于3.4任意文件删除.html">
+            
+                    
+                    Discuz
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.10.1" data-path="../payload/cms/Discuz/DZ小于3.4任意文件删除.html">
+            
+                <a href="../payload/cms/Discuz/DZ小于3.4任意文件删除.html">
+            
+                    
+                    Discuz
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    渗透测试
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../hack/01-信息搜集.html">
+            
+                <a href="../hack/01-信息搜集.html">
+            
+                    
+                    01-信息搜集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../hack/02-windows常用命令.html">
+            
+                <a href="../hack/02-windows常用命令.html">
+            
+                    
+                    02-windows常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../hack/03-linux常用命令.html">
+            
+                <a href="../hack/03-linux常用命令.html">
+            
+                    
+                    03-linux常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../hack/04-常见端口漏洞.html">
+            
+                <a href="../hack/04-常见端口漏洞.html">
+            
+                    
+                    04-常见端口漏洞
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="../hack/05-sql注入.html">
+            
+                <a href="../hack/05-sql注入.html">
+            
+                    
+                    05-sql注入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.6" data-path="../hack/06-xss_payload.html">
+            
+                <a href="../hack/06-xss_payload.html">
+            
+                    
+                    06-xss_payload
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.7" data-path="../hack/07-webshell.html">
+            
+                <a href="../hack/07-webshell.html">
+            
+                    
+                    07-webshell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.8" data-path="../hack/08-反弹shell.html">
+            
+                <a href="../hack/08-反弹shell.html">
+            
+                    
+                    08-反弹shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9" data-path="../hack/09-文件上传.html">
+            
+                <a href="../hack/09-文件上传.html">
+            
+                    
+                    09-文件上传
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.10" data-path="../hack/10-各厂商登录默认密码.html">
+            
+                <a href="../hack/10-各厂商登录默认密码.html">
+            
+                    
+                    10-各厂商登录默认密码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.11" data-path="../hack/11-内网渗透信息搜集.html">
+            
+                <a href="../hack/11-内网渗透信息搜集.html">
+            
+                    
+                    11-内网渗透信息搜集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.12" data-path="../hack/12-windows提权.html">
+            
+                <a href="../hack/12-windows提权.html">
+            
+                    
+                    12-windows提权
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.13" data-path="../hack/13-windows获取密码.html">
+            
+                <a href="../hack/13-windows获取密码.html">
+            
+                    
+                    13-windows获取密码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Kali
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="01-安装配置.html">
+            
+                <a href="01-安装配置.html">
+            
+                    
+                    01-kali安装配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="02-工具安装配置.html">
+            
+                <a href="02-工具安装配置.html">
+            
+                    
+                    02-常用工具安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="03-服务安装配置.html">
+            
+                <a href="03-服务安装配置.html">
+            
+                    
+                    03-服务安装配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="04-wireshare&tcpdump.html">
+            
+                <a href="04-wireshare&tcpdump.html">
+            
+                    
+                    04-wireshare&tcpdump
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.5" data-path="10-cobaltstike.html">
+            
+                <a href="10-cobaltstike.html">
+            
+                    
+                    10-cobaltstike
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="5.1.6" data-path="20-msf.html">
+            
+                <a href="20-msf.html">
+            
+                    
+                    20-Metasploit
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.7" data-path="21-msf主机扫描.html">
+            
+                <a href="21-msf主机扫描.html">
+            
+                    
+                    21-Metasploit 主机扫描
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.8" data-path="22-msf木马生成.html">
+            
+                <a href="22-msf木马生成.html">
+            
+                    
+                    22-Metasploit 木马生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.9" data-path="23-msf-Meterpreter.html">
+            
+                <a href="23-msf-Meterpreter.html">
+            
+                    
+                    23-msf-Meterpreter
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    服务安装
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.1" data-path="../service/gitbook.html">
+            
+                <a href="../service/gitbook.html">
+            
+                    
+                    gibook安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.2" data-path="../service/Centos搭建ss.html">
+            
+                <a href="../service/Centos搭建ss.html">
+            
+                    
+                    Centos搭建ss
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.3" data-path="../service/frp.html">
+            
+                <a href="../service/frp.html">
+            
+                    
+                    frp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.4" data-path="../service/xxeserve.html">
+            
+                <a href="../service/xxeserve.html">
+            
+                    
+                    xxeserve
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.5" data-path="../service/v2ray.html">
+            
+                <a href="../service/v2ray.html">
+            
+                    
+                    v2ray
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >20-Metasploit</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="metasploit">Metasploit</h2>
+<p>Metasploit&#x6846;&#x67B6;&#xFF08;Metasploit Framework,MSF&#xFF09;&#x662F;&#x4E00;&#x4E2A;&#x5F00;&#x6E90;&#x5DE5;&#x5177;&#xFF0C;&#x65E8;&#x5728;&#x65B9;&#x4FBF;&#x6E17;&#x900F;&#x6D4B;&#x8BD5;&#xFF0C;&#x5B83;&#x662F;&#x7531;Ruby&#x7A0B;&#x5E8F;&#x8BED;&#x8A00;&#x7F16;&#x5199;&#x7684;&#x6A21;&#x677F;&#x5316;&#x6846;&#x67B6;&#xFF0C;&#x5177;&#x6709;&#x5F88;&#x597D;&#x7684;&#x6269;&#x5C55;&#x6027;&#xFF0C;&#x4FBF;&#x4E8E;&#x6E17;&#x900F;&#x6D4B;&#x8BD5;&#x4EBA;&#x5458;&#x5F00;&#x53D1;&#x3001;&#x4F7F;&#x7528;&#x5B9A;&#x5236;&#x7684;&#x5DE5;&#x5177;&#x6A21;&#x677F;&#x3002; </p>
+<h4 id="&#x4E00;&#x3001;msf&#x6A21;&#x5757;&#x4ECB;&#x7ECD;">&#x4E00;&#x3001;msf&#x6A21;&#x5757;&#x4ECB;&#x7ECD;</h4>
+<h5 id="auxiliaries&#xFF08;&#x8F85;&#x52A9;&#x6A21;&#x5757;&#xFF09;">Auxiliaries&#xFF08;&#x8F85;&#x52A9;&#x6A21;&#x5757;&#xFF09;</h5>
+<pre><code>&#x8BE5;&#x6A21;&#x5757;&#x4E0D;&#x4F1A;&#x76F4;&#x63A5;&#x5728;&#x6D4B;&#x8BD5;&#x8005;&#x548C;&#x76EE;&#x6807;&#x4E3B;&#x673A;&#x4E4B;&#x95F4;&#x5EFA;&#x7ACB;&#x8BBF;&#x95EE;&#xFF0C;&#x5B83;&#x4EEC;&#x53EA;&#x8D1F;&#x8D23;&#x6267;&#x884C;&#x626B;&#x63CF;&#x3001;&#x55C5;&#x63A2;&#x3001;&#x6307;&#x7EB9;&#x8BC6;&#x522B;&#x7B49;&#x76F8;&#x5173;&#x529F;&#x80FD;&#x4EE5;&#x8F85;&#x52A9;&#x6E17;&#x900F;&#x6D4B;&#x8BD5;&#x3002;
+</code></pre><h5 id="exploit&#xFF08;&#x6F0F;&#x6D1E;&#x5229;&#x7528;&#x6A21;&#x5757;&#xFF09;">Exploit&#xFF08;&#x6F0F;&#x6D1E;&#x5229;&#x7528;&#x6A21;&#x5757;&#xFF09;</h5>
+<pre><code>&#x6F0F;&#x6D1E;&#x5229;&#x7528;&#x662F;&#x6307;&#x7531;&#x6E17;&#x900F;&#x6D4B;&#x8BD5;&#x8005;&#x5229;&#x7528;&#x4E00;&#x4E2A;&#x7CFB;&#x7EDF;&#x3001;&#x5E94;&#x7528;&#x6216;&#x8005;&#x670D;&#x52A1;&#x4E2D;&#x7684;&#x5B89;&#x5168;&#x6F0F;&#x6D1E;&#x8FDB;&#x884C;&#x7684;&#x653B;&#x51FB;&#x884C;&#x4E3A;&#x3002;&#x6D41;&#x884C;&#x7684;&#x6E17;&#x900F;&#x653B;&#x51FB;&#x6280;&#x672F;&#x5305;&#x62EC;&#x7F13;&#x51B2;&#x533A;&#x6EA2;&#x51FA;&#x3001;Web&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x653B;&#x51FB;&#xFF0C;&#x4EE5;&#x53CA;&#x5229;&#x7528;&#x914D;&#x7F6E;&#x9519;&#x8BEF;&#x7B49;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x542B;&#x653B;&#x51FB;&#x8005;&#x6216;&#x6D4B;&#x8BD5;&#x4EBA;&#x5458;&#x9488;&#x5BF9;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x6F0F;&#x6D1E;&#x800C;&#x8BBE;&#x8BA1;&#x7684;&#x5404;&#x79CD;POC&#x9A8C;&#x8BC1;&#x7A0B;&#x5E8F;&#xFF0C;&#x7528;&#x4E8E;&#x7834;&#x574F;&#x7CFB;&#x7EDF;&#x5B89;&#x5168;&#x6027;&#x7684;&#x653B;&#x51FB;&#x4EE3;&#x7801;&#xFF0C;&#x6BCF;&#x4E2A;&#x6F0F;&#x6D1E;&#x90FD;&#x6709;&#x76F8;&#x5E94;&#x7684;&#x653B;&#x51FB;&#x4EE3;&#x7801;&#x3002;
+</code></pre><h5 id="payload&#xFF08;&#x653B;&#x51FB;&#x8F7D;&#x8377;&#x6A21;&#x5757;&#xFF09;">Payload&#xFF08;&#x653B;&#x51FB;&#x8F7D;&#x8377;&#x6A21;&#x5757;&#xFF09;</h5>
+<pre><code>&#x653B;&#x51FB;&#x8F7D;&#x8377;&#x662F;&#x6211;&#x4EEC;&#x671F;&#x671B;&#x76EE;&#x6807;&#x7CFB;&#x7EDF;&#x5728;&#x88AB;&#x6E17;&#x900F;&#x653B;&#x51FB;&#x4E4B;&#x540E;&#x5B8C;&#x6210;&#x5B9E;&#x9645;&#x653B;&#x51FB;&#x529F;&#x80FD;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x6210;&#x529F;&#x6E17;&#x900F;&#x76EE;&#x6807;&#x540E;&#xFF0C;&#x7528;&#x4E8E;&#x5728;&#x76EE;&#x6807;&#x7CFB;&#x7EDF;&#x4E0A;&#x8FD0;&#x884C;&#x4EFB;&#x610F;&#x547D;&#x4EE4;&#x6216;&#x8005;&#x6267;&#x884C;&#x7279;&#x5B9A;&#x4EE3;&#x7801;&#xFF0C;&#x5728;Metasploit&#x6846;&#x67B6;&#x4E2D;&#x53EF;&#x4EE5;&#x81EA;&#x7531;&#x5730;&#x9009;&#x62E9;&#x3001;&#x4F20;&#x9001;&#x548C;&#x690D;&#x5165;&#x3002;&#x653B;&#x51FB;&#x8F7D;&#x8377;&#x4E5F;&#x53EF;&#x80FD;&#x662F;&#x7B80;&#x5355;&#x5730;&#x5728;&#x76EE;&#x6807;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E0A;&#x6267;&#x884C;&#x4E00;&#x4E9B;&#x547D;&#x4EE4;&#xFF0C;&#x5982;&#x6DFB;&#x52A0;&#x7528;&#x6237;&#x8D26;&#x53F7;&#x7B49;&#x3002;
+</code></pre><h5 id="post&#xFF08;&#x540E;&#x671F;&#x6E17;&#x900F;&#x6A21;&#x5757;&#xFF09;">Post&#xFF08;&#x540E;&#x671F;&#x6E17;&#x900F;&#x6A21;&#x5757;&#xFF09;</h5>
+<pre><code>&#x8BE5;&#x6A21;&#x5757;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x5728;&#x53D6;&#x5F97;&#x76EE;&#x6807;&#x7CFB;&#x7EDF;&#x8FDC;&#x7A0B;&#x63A7;&#x5236;&#x6743;&#x540E;&#xFF0C;&#x8FDB;&#x884C;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x540E;&#x6E17;&#x900F;&#x653B;&#x51FB;&#x52A8;&#x4F5C;&#xFF0C;&#x5982;&#x83B7;&#x53D6;&#x654F;&#x611F;&#x4FE1;&#x606F;&#x3001;&#x5B9E;&#x65BD;&#x8DF3;&#x677F;&#x653B;&#x51FB;&#x7B49;&#x3002;
+</code></pre><h5 id="encoders&#xFF08;&#x7F16;&#x7801;&#x5DE5;&#x5177;&#x6A21;&#x5757;&#xFF09;">Encoders&#xFF08;&#x7F16;&#x7801;&#x5DE5;&#x5177;&#x6A21;&#x5757;&#xFF09;</h5>
+<pre><code>&#x8BE5;&#x6A21;&#x5757;&#x5728;&#x6E17;&#x900F;&#x6D4B;&#x8BD5;&#x4E2D;&#x8D1F;&#x8D23;&#x514D;&#x6740;&#xFF0C;&#x4EE5;&#x9632;&#x6B62;&#x88AB;&#x6740;&#x6BD2;&#x8F6F;&#x4EF6;&#x3001;&#x9632;&#x706B;&#x5899;&#x3001;IDS&#x53CA;&#x7C7B;&#x4F3C;&#x7684;&#x5B89;&#x5168;&#x8F6F;&#x4EF6;&#x68C0;&#x6D4B;&#x51FA;&#x6765;&#x3002;
+</code></pre><h4 id="&#x4E8C;&#x3001;msf&#x4E3B;&#x76EE;&#x5F55;">&#x4E8C;&#x3001;msf&#x4E3B;&#x76EE;&#x5F55;</h4>
+<pre><code>kali    /usr/share/metasploit-framework
+mac        /opt/metasplit-framework/embedded/framework/modules
+</code></pre><h4 id="&#x4E09;&#x3001;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;">&#x4E09;&#x3001;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;</h4>
+<pre><code>msfdb init              #&#x521D;&#x59CB;&#x5316;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#x914D;&#x7F6E;&#x6587;&#x4EF6;
+/usr/share/metasploit-framework/config/database.yml
+msfdb reinit            #&#x91CD;&#x65B0;&#x521D;&#x59CB;&#x5316;&#x6570;&#x636E;&#x5E93;
+msfdb delete            #&#x5220;&#x9664;&#x521D;&#x59CB;&#x5316;&#x6570;&#x636E;&#x5E93;
+msfdb start             #&#x542F;&#x52A8;&#x6570;&#x636E;&#x5E93;
+msfdb stop              #&#x505C;&#x6B62;&#x6570;&#x636E;&#x5E93;
+apt-get install metasploit-framework               #&#x66F4;&#x65B0;&#x6F0F;&#x6D1E;&#x5E93;
+</code></pre><h4 id="&#x56DB;&#x3001;msfconsole&#x547D;&#x4EE4;&#x4ECB;&#x7ECD;">&#x56DB;&#x3001;msfconsole&#x547D;&#x4EE4;&#x4ECB;&#x7ECD;</h4>
+<pre><code>db_status               #&#x67E5;&#x770B;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;&#x4FE1;&#x606F;
+db_connect              #&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;
+db_disconnect           #&#x65AD;&#x5F00;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;
+db_rebuild_cache        #&#x5EFA;&#x7ACB;&#x6570;&#x636E;&#x5E93;&#x7F13;&#x5B58;
+workspace                  #&#x67E5;&#x770B;&#x5DE5;&#x4F5C;&#x53F0;
+workspace -a test          #&#x521B;&#x5EFA;&#x5DE5;&#x4F5C;&#x53F0;
+workspace test             #&#x8FDB;&#x5165;&#x5DE5;&#x4F5C;&#x53F0;
+workspace -d test          #&#x5220;&#x9664;&#x5DE5;&#x4F5C;&#x53F0;
+db_nmap                    #nmap&#x626B;&#x63CF;   
+hosts                      #&#x67E5;&#x770B;&#x626B;&#x7684;&#x4E3B;&#x673A;
+hosts 192.168.1.1          #&#x67E5;&#x770B;&#x6307;&#x5B9A;&#x7684;IP
+hosts -u                   #&#x67E5;&#x770B;&#x5B58;&#x6D3B;&#x7684;&#x4E3B;&#x673A;
+hosts -S linux             #&#x641C;&#x7D22;&#x626B;&#x63CF;&#x7ED3;&#x679C;
+hosts -c address,mac -S windows
+services -S 445            #&#x641C;&#x7D22;&#x5305;&#x542B;445&#x7684;&#x4E3B;&#x673A;    
+services -p 445
+services -c port,state  
+banner                     #&#x663E;&#x793A;&#x542F;&#x52A8;banner&#x4FE1;&#x606F;
+connect                    #nc&#x529F;&#x80FD;
+show                       #&#x67E5;&#x770B;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;
+search                     #&#x641C;&#x7D22; name:mysql 
+use exploit/windows/smb/ms08_067_netapi
+info                       #&#x67E5;&#x770B;&#x6A21;&#x5757;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;
+show options/payloads/targets/advanced/missing
+edit                       #&#x7F16;&#x8F91;&#x6A21;&#x5757;&#x5185;&#x5BB9;
+chek                       #&#x9A8C;&#x8BC1;&#x6F0F;&#x6D1E;&#x662F;&#x5426;&#x5B58;&#x5728;
+creds                      #&#x67E5;&#x770B;&#x5DF2;&#x66B4;&#x529B;&#x7834;&#x89E3;&#x7684;&#x4FE1;&#x606F;
+loot                       #&#x67E5;&#x770B;&#x5DF2;&#x83B7;&#x53D6;&#x7684;hash&#x503C;
+vulns                      #&#x67E5;&#x770B;&#x626B;&#x63CF;&#x51FA;&#x6765;&#x7684;&#x6F0F;&#x6D1E;
+db_export -f xml /root/msfbak.xml    #&#x5907;&#x4EFD;&#x6570;&#x636E;&#x5E93;
+db_import /root/msfbak.xml           #&#x5BFC;&#x5165;
+db_import /root/nmap.xml
+set rport                  #&#x8BBE;&#x7F6E;&#x53C2;&#x6570;
+unset                      #&#x53D6;&#x6D88;&#x8BBE;&#x7F6E;
+setg rhosts 1.1.1.1        #&#x8BBE;&#x7F6E;&#x5168;&#x5C40;
+save                       #&#x4FDD;&#x5B58;&#x914D;&#x7F6E;
+
+load openvas               #&#x8C03;&#x7528;&#x5916;&#x90E8;&#x63D2;&#x4EF6;
+openvas_connect            #&#x8FDE;&#x63A5;&#x5230;&#x5916;&#x90E8;&#x63D2;&#x4EF6;
+unload openvas             #&#x5378;&#x8F7D;&#x52A0;&#x8F7D;&#x7684;&#x63D2;&#x4EF6;
+loadpath                   #&#x52A0;&#x8F7D;&#x8DEF;&#x5F84;
+irb                        #&#x5F00;&#x53D1;&#x63A5;&#x53E3;
+resource r.rc              #&#x52A0;&#x8F7D;&#x914D;&#x7F6E;&#x811A;&#x672C;
+msfconsole -r r.rc 
+</code></pre><footer class="page-footer"><span class="copyright">&#x8FC7;&#x6C5F;&#x9F99; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2020-11-17 19:06:40
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="10-cobaltstike.html" class="navigation navigation-prev " aria-label="Previous page: 10-cobaltstike">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="21-msf主机扫描.html" class="navigation navigation-next " aria-label="Next page: 21-Metasploit 主机扫描">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"20-Metasploit","level":"5.1.6","depth":2,"next":{"title":"21-Metasploit 主机扫描","level":"5.1.7","depth":2,"path":"kali/21-msf主机扫描.md","ref":"kali/21-msf主机扫描.md","articles":[]},"previous":{"title":"10-cobaltstike","level":"5.1.5","depth":2,"path":"kali/10-cobaltstike.md","ref":"kali/10-cobaltstike.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["tbfed-pagefooter","expandable-chapters","back-to-top-button","-lunr","livereload"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"过江龙","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"livereload":{},"search":{},"lunr":{"maxIndexSize":200000},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"kali/20-msf.md","mtime":"2020-11-17T11:06:40.604Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-21T09:45:30.504Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
