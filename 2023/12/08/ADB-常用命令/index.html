@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>categories | 安全杂谈</title>
+  <title>ADB 常用命令 | 安全杂谈</title>
   <meta name="keywords" content="">
-  <meta name="description" content="categories | 安全杂谈">
+  <meta name="description" content="ADB 常用命令 | 安全杂谈">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="categories">
@@ -370,19 +370,27 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <article id="post-ADB-常用命令" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">categories</h1>
+        <h1 class="article-title">ADB 常用命令</h1>
     
     <div class="article-meta">
         
         
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="Android逆向">Android逆向</a>
+            
+        </span>
         
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2023-12-08 09:31:13'>2023-12-08 09:30</time>
+            发布时间 : <time class="date" title='最后更新: 2023-12-08 11:20:47'>2023-12-08 11:04</time>
         
     </div>
     <div class="article-meta">
@@ -404,7 +412,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81adb-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">一、adb 常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81adb-%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86"><span class="toc-text">二、adb 设置代理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86"><span class="toc-text">1、设置代理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81%E7%A7%BB%E9%99%A4%E4%BB%A3%E7%90%86"><span class="toc-text">2、移除代理</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81adb-logcat"><span class="toc-text">三、adb logcat</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E5%B8%B8%E7%94%A8%E9%80%89%E9%A1%B9"><span class="toc-text">1、常用选项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81logcat-%E8%BF%87%E6%BB%A4"><span class="toc-text">2、logcat 过滤</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -420,7 +428,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="一、adb-常用命令"><a href="#一、adb-常用命令" class="headerlink" title="一、adb 常用命令"></a>一、adb 常用命令</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">adb version             显示adb版本和路径</span><br><span class="line">adb start-server        启动server</span><br><span class="line">adb kill-server	    	停止server</span><br><span class="line">adb devices		显示连接的设备列表</span><br><span class="line">adb install xxx.apk	通过adb安装app</span><br><span class="line">adb install -r xxx.apk	覆盖安装</span><br><span class="line">adb uninstall 包名	通过adb卸载app</span><br><span class="line"></span><br><span class="line">adb push xxx xxx	推送电脑的文件到手机</span><br><span class="line">adb pull xxx xxx	拉取手机的文件到电脑</span><br><span class="line">adb pull xxx		拉去文件夹</span><br><span class="line">adb shell		进入到手机的Linux控制台</span><br><span class="line">adb -s 设备名 shell	多设备时，指定设备</span><br><span class="line"></span><br><span class="line">超级adb允许</span><br><span class="line">adb root</span><br><span class="line">adb reomunt</span><br><span class="line"></span><br><span class="line">adb shell   </span><br><span class="line">获取当前允许app的包名</span><br><span class="line">    dumpsys window windows|grep mFocusedApp</span><br><span class="line">    dumpsys window windows|grep mCurrentFocus</span><br><span class="line">    dumpsys window |grep mCurrentFocus</span><br><span class="line">根据包名查询入口类</span><br><span class="line">    dumpsys package com.taou.maimai |grep LAUNCHER</span><br><span class="line">显示已安装的app包名</span><br><span class="line">    pm list packages</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、adb-设置代理"><a href="#二、adb-设置代理" class="headerlink" title="二、adb 设置代理"></a>二、adb 设置代理</h2><h4 id="1、设置代理"><a href="#1、设置代理" class="headerlink" title="1、设置代理"></a>1、设置代理</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put global http_proxy ip_address:port</span><br><span class="line">示例，以ip 192.168.1.200 端口 3128为例( 实际配置时以你的代理为准 ):</span><br><span class="line">adb shell settings put global http_proxy 192.168.1.200:3128</span><br></pre></td></tr></table></figure>
+
+<h4 id="2、移除代理"><a href="#2、移除代理" class="headerlink" title="2、移除代理"></a>2、移除代理</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings delete global http_proxy</span><br><span class="line">adb shell settings delete global global_http_proxy_host</span><br><span class="line">adb shell settings delete global global_http_proxy_port</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、adb-logcat"><a href="#三、adb-logcat" class="headerlink" title="三、adb logcat"></a>三、adb logcat</h2><h4 id="1、常用选项"><a href="#1、常用选项" class="headerlink" title="1、常用选项"></a>1、常用选项</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">adb logcat -help 查看帮助</span><br><span class="line">adb logcat 常规显示</span><br><span class="line">adb logcat -c	清楚日志</span><br><span class="line">adb logcat -g 显示缓冲区大小</span><br><span class="line">adb logcat -G 256M	修改缓冲区大小</span><br><span class="line">adb logcat -v time	设置不同的显示格式</span><br><span class="line">adb logcat -v coler 带颜色的显示</span><br></pre></td></tr></table></figure>
+
+<h4 id="2、logcat-过滤"><a href="#2、logcat-过滤" class="headerlink" title="2、logcat 过滤"></a>2、logcat 过滤</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">根据tag过滤日志</span><br><span class="line">adb logcat -s login</span><br><span class="line"></span><br><span class="line">根据pid过滤日志</span><br><span class="line">ps -A |grep com.vlong.app 获取app的pid</span><br><span class="line">adb logcat |findstr &quot;pid&quot;</span><br></pre></td></tr></table></figure>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
     </div>
