@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>CentOS7更改网卡eth0 | 安全杂谈</title>
+  <title>CentOS7网卡顺序错乱 | 安全杂谈</title>
   <meta name="keywords" content="">
-  <meta name="description" content="CentOS7更改网卡eth0 | 安全杂谈">
+  <meta name="description" content="CentOS7网卡顺序错乱 | 安全杂谈">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="categories">
@@ -241,7 +241,7 @@
     <li>
         <div class="all active" data-rel="全部文章">全部文章
             
-                <small>(5)</small>
+                <small>(6)</small>
             
         </div>
     </li>
@@ -268,7 +268,7 @@
         <div data-rel="安全运维">
             
             安全运维
-            <small>(1)</small>
+            <small>(2)</small>
         </div>
         
     </li>
@@ -296,7 +296,7 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="5">
+<input type="hidden" id="yelog_site_posts_number" value="6">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -351,11 +351,20 @@
         
         
         <a  class="全部文章 安全运维 "
-           href="/2023/12/29/CentOS7%E6%9B%B4%E6%94%B9%E7%BD%91%E5%8D%A1eth0/"
+           href="/2023/12/29/CentOS7%E7%BD%91%E5%8D%A1%E9%A1%BA%E5%BA%8F%E9%94%99%E4%B9%B1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CentOS7网卡顺序错乱">CentOS7网卡顺序错乱</span>
+            <span class="post-date" title="2023-12-29 15:31:55">2023/12/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 安全运维 "
+           href="/2023/12/28/CentOS7%E6%9B%B4%E6%94%B9%E7%BD%91%E5%8D%A1eth0/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="CentOS7更改网卡eth0">CentOS7更改网卡eth0</span>
-            <span class="post-date" title="2023-12-29 14:09:57">2023/12/29</span>
+            <span class="post-date" title="2023-12-28 10:09:57">2023/12/28</span>
         </a>
         
         
@@ -412,9 +421,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-CentOS7更改网卡eth0" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-CentOS7网卡顺序错乱" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">CentOS7更改网卡eth0</h1>
+        <h1 class="article-title">CentOS7网卡顺序错乱</h1>
     
     <div class="article-meta">
         
@@ -432,7 +441,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2023-12-29 15:28:40'>2023-12-29 14:09</time>
+            发布时间 : <time class="date" title='最后更新: 2023-12-29 15:59:10'>2023-12-29 15:31</time>
         
     </div>
     <div class="article-meta">
@@ -454,7 +463,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81CentOS7%E7%BD%91%E5%8D%A1%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99"><span class="toc-text">一、CentOS7网卡命名规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AE%89%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E4%BF%AE%E6%94%B9"><span class="toc-text">二、安装系统后修改</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AE%89%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%89%8D%E4%BF%AE%E6%94%B9"><span class="toc-text">二、安装系统前修改</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CentOS7%E7%BD%91%E5%8D%A1%E9%A1%BA%E5%BA%8F%E9%94%99%E4%B9%B1%E5%8E%9F%E5%9B%A0"><span class="toc-text">CentOS7网卡顺序错乱原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%94%B9%E7%B3%BB%E7%BB%9F%E9%BB%98%E8%AE%A4%E7%BD%91%E5%8D%A1%E9%A1%BA%E5%BA%8F"><span class="toc-text">更改系统默认网卡顺序</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -470,29 +479,26 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、CentOS7网卡命名规则"><a href="#一、CentOS7网卡命名规则" class="headerlink" title="一、CentOS7网卡命名规则"></a>一、CentOS7网卡命名规则</h2><blockquote>
-<p>在 CentOS 7 中，网卡命名规则使用了一种基于预测的网络接口命名方案，称为”Predictable Network Interface Names”（可预测的网络接口名称）。这种命名方案旨在提供更稳定、更可预测的网络接口命名，以替代传统的 ethX 类型命名方式。</p>
-</blockquote>
-<blockquote>
-<p>这种命名方案的命名规则基于网卡的物理位置、MAC 地址、总线位置等信息来生成名称。一些常见的网络接口命名规则包括：<br>ensX: 表示 “Ethernet, Slot X”<br>enpXsY: 表示 “Ethernet, PCI bus X, Slot Y”<br>enoX: 表示 “Ethernet, Onboard (embedded) device X”<br>wlXsY: 表示 “Wireless LAN, Slot X, Y”</p>
-</blockquote>
-<p>查看默认网卡信息</p>
-<p><img src="/images/2/1/01.png"></p>
-<h2 id="二、安装系统后修改"><a href="#二、安装系统后修改" class="headerlink" title="二、安装系统后修改"></a>二、安装系统后修改</h2><p>禁用系统内核自动命名配置</p>
-<p>vim &#x2F;etc&#x2F;default&#x2F;grub<br>在GRUB_CMDLINE_LINUX添加net.ifnames&#x3D;0 biosdevname&#x3D;0</p>
-<p>更新grub配置参数<br>grub2-mkconfig -o &#x2F;boot&#x2F;grub2&#x2F;grub.cfg </p>
-<p><img src="/images/2/1/02.png"></p>
-<p>修改网卡配置文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cp /etc/sysconfig/network-scripts/ifcfg-ens33 /etc/sysconfig/network-scripts/ifcfg-eth0</span><br><span class="line">sed -i &#x27;s/ens33/eth0/g&#x27; /etc/sysconfig/network-scripts/ifcfg-eth0</span><br><span class="line">cp /etc/sysconfig/network-scripts/ifcfg-ens37 /etc/sysconfig/network-scripts/ifcfg-eth1</span><br><span class="line">sed -i &#x27;s/ens37/eth1/g&#x27; /etc/sysconfig/network-scripts/ifcfg-eth1</span><br><span class="line">cp /etc/sysconfig/network-scripts/ifcfg-ens38 /etc/sysconfig/network-scripts/ifcfg-eth2</span><br><span class="line">sed -i &#x27;s/ens38/eth2/g&#x27; /etc/sysconfig/network-scripts/ifcfg-eth2</span><br></pre></td></tr></table></figure>
+        <h2 id="CentOS7网卡顺序错乱原因"><a href="#CentOS7网卡顺序错乱原因" class="headerlink" title="CentOS7网卡顺序错乱原因"></a>CentOS7网卡顺序错乱原因</h2><p>在 CentOS 7 中，网卡顺序错乱可能是由于新的网卡命名规则所致。在传统的 Linux 中，网卡命名通常以 ethX 的格式进行，但在 CentOS 7 中，默认使用了 Predictable Network Interface Names（可预测的网络接口命名）规则，这意味着网卡的命名方式与以往不同，会根据网卡的硬件信息、位置等来进行命名，例如 ensX 或 enpXsX 等。  </p>
+<p>在一些情况下，网卡顺序错乱可能是由以下原因导致的：  </p>
+<ul>
+<li>系统硬件更改： 如果系统硬件发生变化，比如更换或添加网卡，新的网卡顺序可能与先前的配置不匹配，导致错乱。  </li>
+<li>驱动加载顺序： 在系统启动时，网卡驱动加载的顺序可能会影响网卡的命名顺序，这可能导致顺序混乱。  </li>
+<li>网卡命名规则变更： 如果系统管理员手动更改了网卡命名规则或者网络设备配置，可能会引起网卡顺序错乱。  】</li>
+</ul>
+<p>查看网络信息，第三块网卡配置有ip地址，但是网线是在第一个网卡插着。</p>
+<p><img src="/images/2/2/01.png"></p>
+<p>根据MAC地址进行判断网卡顺序，查看MAC地址最后一位分别为<br>27、28、f5、f6、f7、f8、f9、fa、29、2a，根据上图f5结尾的第一块网卡，那么猜测网卡的顺序应该为<br>f5、f6、f7、f8、f9、fa、27、28、29、2a。<br>后反复插拔网线确认了网卡顺序确实为f5、f6、f7、f8、f9、fa、27、28、29、2a。</p>
+<h2 id="更改系统默认网卡顺序"><a href="#更改系统默认网卡顺序" class="headerlink" title="更改系统默认网卡顺序"></a>更改系统默认网卡顺序</h2><p>创建一个 Udev 规则文件，将mac地址跟网卡名称进行对应上。<br>sudo vi &#x2F;etc&#x2F;udev&#x2F;rules.d&#x2F;70-persistent-net.rules</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SUBSYSTEM==&quot;net&quot;, ACTION==&quot;add&quot;, DRIVERS==&quot;?*&quot;, ATTR&#123;address&#125;==&quot;00:10:f3:96:5f:f5&quot;, ATTR&#123;type&#125;==&quot;1&quot;, NAME=&quot;eth0&quot;</span><br><span class="line">SUBSYSTEM==&quot;net&quot;, ACTION==&quot;add&quot;, DRIVERS==&quot;?*&quot;, ATTR&#123;address&#125;==&quot;00:10:f3:96:5f:f6&quot;, ATTR&#123;type&#125;==&quot;1&quot;, NAME=&quot;eth1&quot;</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
 
-<p>重启系统查看网卡信息已修改为eth0</p>
-<p><img src="/images/2/1/03.png"></p>
-<h2 id="二、安装系统前修改"><a href="#二、安装系统前修改" class="headerlink" title="二、安装系统前修改"></a>二、安装系统前修改</h2><p>在安装界面移动光标到 Install Centos 7 按 TAB 键</p>
-<p><img src="/images/2/1/04.png"></p>
-<p>在出现的代码的末尾添加：net.ifnames&#x3D;0 biosdevname&#x3D;0.按下回车开始安装即可</p>
-<p><img src="/images/2/1/05.png"></p>
-<p>系统安装完成后查看网卡信息</p>
-<p><img src="/images/2/1/06.png"></p>
+<p>更新 Udev 规则后，重新加载它们以使更改生效</p>
+<p><code>udevadm control --reload-rules</code></p>
+<p>修改网卡配置为对应的名称</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mv /etc/sysconfig/network-script/enp6s0 /etc/sysconfig/network-script/eth0</span><br><span class="line">sed -i &#x27;s/enp6s0/eth0/g&#x27; /etc/sysconfig/network-script/eth0</span><br><span class="line">mv /etc/sysconfig/network-script/enp7s0 /etc/sysconfig/network-script/eth2</span><br><span class="line">sed -i &#x27;s/enp7s0/eth1/g&#x27; /etc/sysconfig/network-script/eth1</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+
+<p>重启系统查看网卡顺序</p>
+<p><img src="/images/2/2/01.png"></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 生前何必久睡 死后自会长眠 </span>
