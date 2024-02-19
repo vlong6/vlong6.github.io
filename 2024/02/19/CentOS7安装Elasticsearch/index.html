@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>CentOS7更改网卡eth0 | 安全杂谈</title>
+  <title>CentOS7安装Elasticsearch | 安全杂谈</title>
   <meta name="keywords" content="">
-  <meta name="description" content="CentOS7更改网卡eth0 | 安全杂谈">
+  <meta name="description" content="CentOS7安装Elasticsearch | 安全杂谈">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="CentOS7网卡顺序错乱原因在 CentOS 7 中，网卡顺序错乱可能是由于新的网卡命名规则所致。在传统的 Linux 中，网卡命名通常以 ethX 的格式进行，但在 CentOS 7 中，默认使用了 Predictable Network Interface Names（可预测的网络接口命名）规则，这意味着网卡的命名方式与以往不同，会根据网卡的硬件信息、位置等来进行命名，例如 ensX 或 e">
 <meta property="og:type" content="article">
@@ -435,9 +435,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-CentOS7更改网卡eth0" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-CentOS7安装Elasticsearch" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">CentOS7更改网卡eth0</h1>
+        <h1 class="article-title">CentOS7安装Elasticsearch</h1>
     
     <div class="article-meta">
         
@@ -455,7 +455,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2023-12-29 15:40:21'>2023-12-28 10:09</time>
+            发布时间 : <time class="date" title='最后更新: 2024-02-19 17:12:34'>2024-02-19 17:03</time>
         
     </div>
     <div class="article-meta">
@@ -477,7 +477,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81CentOS7%E7%BD%91%E5%8D%A1%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99"><span class="toc-text">一、CentOS7网卡命名规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AE%89%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E4%BF%AE%E6%94%B9"><span class="toc-text">二、安装系统后修改</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AE%89%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%89%8D%E4%BF%AE%E6%94%B9"><span class="toc-text">二、安装系统前修改</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CentOS7%E5%AE%89%E8%A3%85Elasticsearch"><span class="toc-text">CentOS7安装Elasticsearch</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Elasticsearch-%E7%AE%80%E4%BB%8B"><span class="toc-text">1. Elasticsearch 简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85JDK"><span class="toc-text">2. 安装JDK</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%AE%89%E8%A3%85Elasticsearch"><span class="toc-text">3. 安装Elasticsearch</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%AE%89%E8%A3%85ik%E6%8F%92%E4%BB%B6"><span class="toc-text">4. 安装ik插件</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -493,31 +493,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、CentOS7网卡命名规则"><a href="#一、CentOS7网卡命名规则" class="headerlink" title="一、CentOS7网卡命名规则"></a>一、CentOS7网卡命名规则</h2><p>在 CentOS 7 中，网卡命名规则使用了一种基于预测的网络接口命名方案，称为”Predictable Network Interface Names”（可预测的网络接口名称）。这种命名方案旨在提供更稳定、更可预测的网络接口命名，以替代传统的 ethX 类型命名方式。</p>
-<p>这种命名方案的命名规则基于网卡的物理位置、MAC 地址、总线位置等信息来生成名称。一些常见的网络接口命名规则包括：  </p>
-<ul>
-<li>ensX: 表示 “Ethernet, Slot X”</li>
-<li>enpXsY: 表示 “Ethernet, PCI bus X, Slot Y”</li>
-<li>enoX: 表示 “Ethernet, Onboard (embedded) device X”</li>
-<li>wlXsY: 表示 “Wireless LAN, Slot X, Y”</li>
-</ul>
-<p>查看默认网卡信息</p>
-<p><img src="/images/2/1/01.png"></p>
-<h2 id="二、安装系统后修改"><a href="#二、安装系统后修改" class="headerlink" title="二、安装系统后修改"></a>二、安装系统后修改</h2><p>禁用系统内核自动命名配置</p>
-<p>vim &#x2F;etc&#x2F;default&#x2F;grub<br>在GRUB_CMDLINE_LINUX添加net.ifnames&#x3D;0 biosdevname&#x3D;0</p>
-<p>更新grub配置参数<br>grub2-mkconfig -o &#x2F;boot&#x2F;grub2&#x2F;grub.cfg </p>
-<p><img src="/images/2/1/02.png"></p>
-<p>修改网卡配置文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cp /etc/sysconfig/network-scripts/ifcfg-ens33 /etc/sysconfig/network-scripts/ifcfg-eth0</span><br><span class="line">sed -i &#x27;s/ens33/eth0/g&#x27; /etc/sysconfig/network-scripts/ifcfg-eth0</span><br><span class="line">cp /etc/sysconfig/network-scripts/ifcfg-ens37 /etc/sysconfig/network-scripts/ifcfg-eth1</span><br><span class="line">sed -i &#x27;s/ens37/eth1/g&#x27; /etc/sysconfig/network-scripts/ifcfg-eth1</span><br><span class="line">cp /etc/sysconfig/network-scripts/ifcfg-ens38 /etc/sysconfig/network-scripts/ifcfg-eth2</span><br><span class="line">sed -i &#x27;s/ens38/eth2/g&#x27; /etc/sysconfig/network-scripts/ifcfg-eth2</span><br></pre></td></tr></table></figure>
+        <h2 id="CentOS7安装Elasticsearch"><a href="#CentOS7安装Elasticsearch" class="headerlink" title="CentOS7安装Elasticsearch"></a>CentOS7安装Elasticsearch</h2><h4 id="1-Elasticsearch-简介"><a href="#1-Elasticsearch-简介" class="headerlink" title="1. Elasticsearch 简介"></a>1. Elasticsearch 简介</h4><p>Elasticsearch 是一个开源、分布式、基于 Lucene 构建的搜索引擎，具有高度可扩展性和实时搜索分析能力。它不仅提供全文搜索功能，还支持结构化数据存储、聚合分析和复杂查询等高级特性。Elasticsearch 通过 RESTful API 提供服务，使得开发人员能够容易地在应用程序中集成复杂的搜索功能。  </p>
+<h4 id="2-安装JDK"><a href="#2-安装JDK" class="headerlink" title="2. 安装JDK"></a>2. 安装JDK</h4><p>Elasticsearch 是一个用 Java 编写的开源搜索引擎，因此它对 Java 环境有明确的依赖要求。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装JDK</span></span><br><span class="line">sudo yum update</span><br><span class="line">sudo yum install java-1.8.0-openjdk</span><br><span class="line"></span><br><span class="line"><span class="comment"># 验证JDK安装</span></span><br><span class="line">java -version</span><br></pre></td></tr></table></figure>
 
-<p>重启系统查看网卡信息已修改为eth0</p>
-<p><img src="/images/2/1/03.png"></p>
-<h2 id="二、安装系统前修改"><a href="#二、安装系统前修改" class="headerlink" title="二、安装系统前修改"></a>二、安装系统前修改</h2><p>在安装界面移动光标到 Install Centos 7 按 TAB 键</p>
-<p><img src="/images/2/1/04.png"></p>
-<p>在出现的代码的末尾添加：net.ifnames&#x3D;0 biosdevname&#x3D;0.按下回车开始安装即可</p>
-<p><img src="/images/2/1/05.png"></p>
-<p>系统安装完成后查看网卡信息</p>
-<p><img src="/images/2/1/06.png"></p>
+<h4 id="3-安装Elasticsearch"><a href="#3-安装Elasticsearch" class="headerlink" title="3. 安装Elasticsearch"></a>3. 安装Elasticsearch</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">sudo rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;[elasticsearch-7.x]&#x27;</span> | sudo <span class="built_in">tee</span> -a /etc/yum.repos.d/elasticsearch.repo</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;name=Elasticsearch repository for 7.x packages&#x27;</span> | sudo <span class="built_in">tee</span> -a /etc/yum.repos.d/elasticsearch.repo</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;baseurl=https://artifacts.elastic.co/packages/7.x/yum/&#x27;</span> | sudo <span class="built_in">tee</span> -a /etc/yum.repos.d/elasticsearch.repo</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;gpgcheck=1&#x27;</span> | sudo <span class="built_in">tee</span> -a /etc/yum.repos.d/elasticsearch.repo</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch&#x27;</span> | sudo <span class="built_in">tee</span> -a /etc/yum.repos.d/elasticsearch.repo</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;enabled=1&#x27;</span> | sudo <span class="built_in">tee</span> -a /etc/yum.repos.d/elasticsearch.repo</span><br><span class="line"></span><br><span class="line">sudo yum install elasticsearch-7.4.2</span><br><span class="line"></span><br><span class="line">sudo vi /etc/elasticsearch/elasticsearch.yml</span><br><span class="line"><span class="comment"># ---------------------------------- Network </span></span><br><span class="line">network.host: 0.0.0.0</span><br><span class="line">http.port: 9200 </span><br><span class="line"><span class="comment"># ------------------------------------ Node </span></span><br><span class="line">node.name: node-1</span><br><span class="line"><span class="comment"># --------------------------------- Discovery </span></span><br><span class="line">cluster.initial_master_nodes: [<span class="string">&quot;node-1&quot;</span>]</span><br><span class="line"></span><br><span class="line">sudo systemctl <span class="built_in">enable</span> elasticsearch</span><br><span class="line">sudo systemctl start elasticsearch</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-安装ik插件"><a href="#4-安装ik插件" class="headerlink" title="4. 安装ik插件"></a>4. 安装ik插件</h4><p>Elasticsearch 的 IK 分词插件（IK Analyzer）是一个针对中文的分词器，用于提升 Elasticsearch 在处理中文文本时的搜索和索引性能。IK 分词器在处理中文文档时，能够对输入的汉字进行智能切分，实现词汇级别的搜索，并支持自定义扩展词库、同义词以及多模式分词等功能。</p>
+<p>ik插件下载地址<br><code>https://github.com/medcl/elasticsearch-analysis-ik/releases</code></p>
+<p>将下载的ik放到如下路径下  <code>elasticsearch/plugins/ik/</code>,重启es即可。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 生前何必久睡 死后自会长眠 </span>
